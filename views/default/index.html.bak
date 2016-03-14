@@ -1,0 +1,32 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+
+{{extend 'layout.html'}}
+<div>
+<h1>Blog Pages</h1>
+<button class="btn btn-default btn-small">
+{{=A("All Users", _href=URL("showusers"))}}
+</button>
+<button class="btn btn-default btn-small">
+{{=A("Create a new blog", _href=URL("createpage"))}}
+</button>
+<hr>
+{{=A('Search Blog Pages', _href=URL('index'))}}
+{{=form}}<br />{{=target_div}}
+<hr>
+<p class="lead">All Blog Pages</p>
+</div>
+
+<ul>
+    {{for page in pages:}}
+    <span>
+        <h4>
+            <a href="show/{{=page.id}}">{{=page.title}}</a><br>
+            <small>
+                <a href="/blog5/default/showuser/{{=page.created_by}}">
+                    <span class="text-muted"> {{=page.created_by.first_name}} {{=page.created_by.last_name}}</span></a>
+            </small>
+        </h4>
+        <p>{{=page.body}}</p>
+    </span>
+    {{pass}}
+</ul>

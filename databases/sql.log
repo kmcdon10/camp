@@ -1,0 +1,1728 @@
+timestamp: 2016-03-12T12:43:30.554115
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2016-03-12T12:43:30.578674
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-03-12T12:43:30.602794
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-03-12T12:43:30.605976
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2016-03-12T12:43:30.612874
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-03-12T12:43:30.619368
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2016-03-12T12:47:47.747388
+CREATE TABLE image(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512) UNIQUE,
+    file CHAR(512)
+);
+success!
+timestamp: 2016-03-12T12:47:47.758107
+CREATE TABLE document(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    file CHAR(512),
+    created_on TIMESTAMP
+);
+success!
+timestamp: 2016-03-12T12:47:47.779968
+ALTER TABLE auth_user ADD photo_id INTEGER REFERENCES image (id) ON DELETE CASCADE  ;
+success!
+timestamp: 2016-03-12T12:47:47.855501
+CREATE TABLE page(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    body TEXT,
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-03-12T12:47:47.871331
+CREATE TABLE blogpost(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    body TEXT,
+    tags TEXT,
+    photo_id INTEGER REFERENCES image (id) ON DELETE CASCADE  ,
+    document_id INTEGER REFERENCES document (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    blogpage_id INTEGER REFERENCES page (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-03-12T12:47:47.882998
+CREATE TABLE comment(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    body TEXT,
+    created_by CHAR(512),
+    created_on TIMESTAMP,
+    blogpost_id INTEGER REFERENCES blogpost (id) ON DELETE CASCADE  
+);
+success!
+success!
+timestamp: 2016-03-13T17:15:02.791888
+CREATE TABLE staff(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    first_name CHAR(512),
+    middle_name TEXT,
+    last_name CHAR(512),
+    gender CHAR(512),
+    dateofbirth CHAR(512),
+    street_address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zipcode CHAR(512),
+    day_phone CHAR(512),
+    evening_phone CHAR(512),
+    prefered_name CHAR(512),
+    shirt_size CHAR(512),
+    email CHAR(512),
+    drivers_license_or_ssn CHAR(512),
+    emergency_contact CHAR(512),
+    emergency_contact_relationship CHAR(512),
+    emergency_contact_primary_phone CHAR(512),
+    emergency_contact_secondary_phone TEXT,
+    convicted_child_related CHAR(1),
+    illegal_drugs CHAR(1),
+    consent_sig_background_check CHAR(512),
+    consent_sig_date CHAR(512),
+    prefered_position CHAR(512),
+    can_swim CHAR(1),
+    describe_horse_exp CHAR(512),
+    special_training CHAR(512),
+    prev_experience_special_needs CHAR(512),
+    has_disability CHAR(1),
+    taking_prescriptions CHAR(1),
+    date_preference CHAR(512),
+    willing_to_consider_other_session CHAR(1),
+    part_time_dates TEXT,
+    license_revoked CHAR(1),
+    license_signature CHAR(512),
+    license_date CHAR(512),
+    first_reference_name CHAR(512),
+    first_reference_relationship CHAR(512),
+    first_best_time_call TEXT,
+    first_reference_phone CHAR(512),
+    second_reference_name CHAR(512),
+    second_reference_relationship CHAR(512),
+    second_best_time_call TEXT,
+    second_reference_phone CHAR(512),
+    consent_signature CHAR(512),
+    waiver_signature CHAR(512),
+    waiver_date CHAR(512),
+    health_policy_issued_to CHAR(512),
+    policy_number CHAR(512),
+    policy_group_number CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T19:51:54.242294
+ALTER TABLE staff ADD created_on TIMESTAMP;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T19:56:08.190514
+ALTER TABLE staff ADD auth_user INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T20:26:48.164784
+CREATE TABLE counselor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    first_name CHAR(512),
+    middle_name TEXT,
+    last_name CHAR(512),
+    gender CHAR(512),
+    dateofbirth CHAR(512),
+    street_address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zipcode CHAR(512),
+    phone CHAR(512),
+    shirt_size CHAR(512),
+    nickname TEXT,
+    email CHAR(512),
+    parents_names CHAR(512),
+    home_phone TEXT,
+    parents_phone CHAR(512),
+    emergency_contact CHAR(512),
+    emergency_contact_phone CHAR(512),
+    health_insurance_company CHAR(512),
+    policy_number CHAR(512),
+    convicted_child_related CHAR(1),
+    illegal_drugs CHAR(1),
+    convicted_felony CHAR(1),
+    over_18 CHAR(1),
+    consent_sig_background_check CHAR(512),
+    consent_sig_date CHAR(512),
+    high_school CHAR(512),
+    grade CHAR(512),
+    hobbies CHAR(512),
+    special_training TEXT,
+    can_swim CHAR(1),
+    experience_with_disabilities CHAR(512),
+    previous_camp_counselor CHAR(1),
+    has_disability CHAR(1),
+    taking_prescriptions CHAR(1),
+    reason_for_volunteering CHAR(512),
+    date_preference CHAR(512),
+    willing_to_consider_other_session CHAR(1),
+    transportation CHAR(512),
+    first_reference_name CHAR(512),
+    first_reference_relationship CHAR(512),
+    first_best_time_call TEXT,
+    first_reference_phone CHAR(512),
+    second_reference_name CHAR(512),
+    second_reference_relationship CHAR(512),
+    second_best_time_call TEXT,
+    second_reference_phone CHAR(512),
+    consent_signature CHAR(512),
+    waiver_conselor_sig CHAR(512),
+    waiver_parent_sig CHAR(512),
+    waiver_date CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T20:41:14.497637
+ALTER TABLE counselor ADD auth_user INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T20:43:04.377813
+CREATE TABLE camper(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    auth_user INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    first_name CHAR(512),
+    last_name CHAR(512),
+    dateofbirth DATE,
+    gender CHAR(512),
+    street_address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zipcode CHAR(512),
+    emergency_contact CHAR(512),
+    emergency_contact_phone CHAR(512),
+    health_insurance_company CHAR(512),
+    policy_number CHAR(512),
+    shirt_size CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:03:24.304382
+CREATE TABLE guardian(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    primary_full_name CHAR(512),
+    primary_phone CHAR(512),
+    second_phone CHAR(512),
+    street_address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zipcode CHAR(512),
+    email CHAR(512),
+    secondary_guardian CHAR(1),
+    secondary_full_name CHAR(512),
+    secondary_primary_phone CHAR(512),
+    secondary_second_phone CHAR(512),
+    secondary_email CHAR(512),
+    secondary_relationship TEXT,
+    relationship CHAR(512)
+);
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:03:58.821711
+ALTER TABLE guardian ADD camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:04:40.217805
+ALTER TABLE staff ADD auth_user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+timestamp: 2016-03-13T21:04:40.298849
+ALTER TABLE counselor ADD auth_user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+timestamp: 2016-03-13T21:04:40.318926
+ALTER TABLE camper ADD auth_user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:07:48.283458
+ALTER TABLE guardian ADD created_on TIMESTAMP;
+success!
+timestamp: 2016-03-13T21:07:48.291282
+CREATE TABLE medical_information(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    medical_diagnosis CHAR(512),
+    metal_age_ability CHAR(512),
+    seizure_type CHAR(512),
+    recovery_time CHAR(512),
+    preexisting_medical_conditions CHAR(512),
+    psychiatric_disorders CHAR(512),
+    walks_independently CHAR(1),
+    uses_cane_or_walker CHAR(1),
+    uses_wheelchair CHAR(1),
+    needs_transfer_standby_or_assist CHAR(1),
+    is_independent_toileting CHAR(1),
+    has_bowel_and_bladder_control CHAR(1),
+    wears_depends_or_diaper CHAR(1),
+    describe_needs TEXT
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:10:04.972089
+CREATE TABLE eating(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    food_alergies TEXT,
+    limit_intake_of_certain_foods TEXT,
+    watch_for_overeating CHAR(1),
+    special_diet TEXT,
+    assistance_needed CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:11:54.397488
+CREATE TABLE behavior(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    behavioral_problems CHAR(1),
+    describe_frequency TEXT,
+    describe_management_techniques TEXT,
+    activities_hobbies TEXT,
+    horseback_riding_experience CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:13:16.231273
+CREATE TABLE transportation(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    child_pickup CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:16:13.578065
+CREATE TABLE new_camper_information(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    school_work_name CHAR(512),
+    town CHAR(512),
+    teacher_boss CHAR(512),
+    reference_phone CHAR(512),
+    been_away_without_family CHAR(1),
+    homesickness_anticipated CHAR(1),
+    previous_overnight_camp CHAR(1),
+    camp_frequency CHAR(1),
+    where_learn_about_camp CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-03-13T21:18:57.275625
+CREATE TABLE camp_parent_questionnaire(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    camper_id INTEGER REFERENCES camper (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    needs_nightlight CHAR(1),
+    needs_bedrails CHAR(1),
+    bathroom_during_night CHAR(1),
+    wanders_at_night CHAR(1),
+    wears_pajamas_helmet_braces_at_bedtime TEXT,
+    can_sleep_on_top_bunk_bed CHAR(1),
+    showering CHAR(512),
+    washing_face_hands CHAR(512),
+    brushing_teeth CHAR(512),
+    dressing CHAR(512),
+    undressing CHAR(512),
+    menstrual_care CHAR(512),
+    special_instructions TEXT,
+    regular_bedtime TEXT,
+    regular_wakeup_time TEXT,
+    takes_naps CHAR(1),
+    usual_bedtime_routine TEXT,
+    encouraging_good_behavior TEXT,
+    limiting_poor_behavior TEXT,
+    additional_suggestions TEXT,
+    contact_if_issues CHAR(512),
+    contact_issues_phone CHAR(512),
+    fears_need_to_know TEXT,
+    friends_paired_with_names_order_by_preference TEXT,
+    other_friends_family TEXT
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
