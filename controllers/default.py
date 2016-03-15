@@ -25,6 +25,129 @@ def user():
     """
     return dict(form=auth())
 
+@auth.requires_login()
+def staff():
+    form = SQLFORM(db.staff)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def counselor():
+    form = SQLFORM(db.counselor)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def camper():
+    form = SQLFORM(db.camper)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def guardian():
+    form = SQLFORM(db.guardian)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def medical_information():
+    form = SQLFORM(db.medical_information)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def eating():
+    form = SQLFORM(db.eating)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def behavior():
+    form = SQLFORM(db.behavior)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def transportation():
+    form = SQLFORM(db.transportation)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def new_camper_information():
+    form = SQLFORM(db.new_camper_information)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def camp_parent_questionnaire():
+    form = SQLFORM(db.camp_parent_questionnaire)
+    if form.process().accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill out the form'
+    return dict(form=form)
+
+@auth.requires_login()
+def pay():
+    from gluon.contrib.stripe import StripeForm
+    form = StripeForm(
+        pk='pk_test_t_6pRNASCoBOKtIshFeQd4XMUh',
+        sk='sk_test_BQokikJOvBiI2HlWgH4olfQ2',
+        amount=int(150), #1.5 amount is in cents
+        description='you paid for one week at camp')
+    if form.process.accepted:
+        redirect(URL('thankyou'))
+    return dict(form=form)
+
+
 @cache.action()
 def download():
     return response.download(request, db)

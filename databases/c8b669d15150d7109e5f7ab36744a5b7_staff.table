@@ -476,12 +476,12 @@ I00
 sg6
 I39
 sg7
-S'DATE'
+S'CHAR(512)'
 p107
 sg9
 I00
 sg10
-g95
+g11
 ssS'email'
 p108
 (dp109
