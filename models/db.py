@@ -327,3 +327,20 @@ db.define_table('camp_parent_questionnaire',
     Field('other_friends_family', 'text'))
 
 db.camp_parent_questionnaire.camper_id.requires = IS_IN_DB(db, db.camper)
+
+db.define_table('pending',
+    Field('auth_user_id', 'reference auth_user', default=auth.user_id, update=auth.user_id, readable=False, writable=False),
+    Field('token_class', requires=IS_IN_SET(['a', 'b', 'c'])),
+    Field('amount', 'double'),
+    Field('confirmed', 'boolean', default=False, readable=False, writable=False))
+
+db.pending.auth_user_id.requires = IS_IN_DB(db, db.auth_user)
+
+db.define_table('confirmed_trans',
+    Field('auth_user_id', 'reference auth_user', default=auth.user_id, update=auth.user_id, readable=False, writable=False),
+    Field('token_class', requires=IS_IN_SET(['a', 'b', 'c'])),
+    Field('amount', 'double'),
+    Field('pending_id', 'reference pending'),
+    Field('payment_system_code'),
+    Field('confirmation_time', 'datetime'),
+    Field('tokens', 'integer'))

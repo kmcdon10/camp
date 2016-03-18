@@ -1,0 +1,33 @@
+{{extend 'layout.html'}}
+<script>
+	$(function() {
+		$('#paypal_form').sumbit();
+	})
+</script>
+
+<h1>Please wait one moment while we redirect you to paypal.</h1>
+<form id='paypal_form' action='https://www.sandbox.paypal.com/cgi-bin/webscs' method='post'>
+
+<input type='hidden' name='business' value='{{=paypal_id}}' />
+<input type='image' src='https://www.sandbox.paypal.com/en_US/1/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='paypal'/>
+
+<img alt='' border='0' src='https://www.sandbox.paypal.com/en_US/1/src/pixel.gif'/>
+
+
+<input type='hidden' name='cmd' value='_xclick' />
+<input type='hidden' name='upload' value='1' />
+<input type='hidden' name='charset' value='utf-8' />
+<input type='hidden' name='display' value='1' />
+
+
+<input type='hidden' name='notify_url' value='{{=ipn_handler}}' />
+<input type='hidden' name='return' value='{{=paypal_return_url}}' />
+
+<input type='hidden' name='custom' value='{{=auth.user_id}}' />
+<input type='hidden' name='invoice' value='{{=session.pending.id}}' />
+<input type='hidden' name='amount' value='{{=session.pending.amount}}' />
+<input type='hidden' name='item_name' value='Puppies for sale' />
+<input type='hidden' name='item_number' value='{{=session.pending.id}}' />
+</form>
+
+{{=response.toolbar()}}
