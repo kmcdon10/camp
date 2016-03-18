@@ -1,0 +1,344 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'DAL' object has no attribute 'auth_user_id'"
+p3
+sS'layer'
+p4
+S'/Users/habibi/web2py/applications/camp/models/db.py'
+p5
+sS'code'
+p6
+S'db = DAL(\'sqlite://storage.sqlite\', pool_size=1)\n\nfrom gluon.tools import *\nauth = Auth(db)\n\n# configure email\n# mail = auth.settings.mailer\n# mail.settings.server = \'logging\' or \'smtp.gmail.com:587\'\n# mail.settings.sender = \'katemcdonald39@gmail.com\'\n# mail.settings.login = \'email:password\'\n\n#from gluon.contrib.login_methods.rpx_account import RPXAccount\n#auth.settings.actions_disabled=[\'register\',\'change_password\',\'request_reset_password\']\n#auth.settings.login_form = RPXAccount(request,\n#     api_key=\'569ddf3abd8a0704347caa9e8bb7370a14905b04 \',\n#     domain=\'localhost:8000/blogging_platform3/default/index\',\n#     url = "http://localhost:8000/blogging_platform3/%s/default/user/login" % request.application)\n\ndb.define_table("image",\n    Field("title", unique=True),\n    Field("file", "upload"),\n    format = "%(title)s")\n\ndb.define_table(\'document\',\n    Field(\'name\'),\n    Field(\'file\', \'upload\'),\n    Field(\'created_on\', \'datetime\', default=request.now),\n    format=\'%(name)s\')\n\nauth.define_tables(username=False)\n\ndb.define_table(\'page\',\n    Field(\'title\'),\n    Field(\'body\', \'text\'),\n    Field(\'created_on\', \'datetime\', default=request.now),\n    Field(\'created_by\', \'reference auth_user\', readable=False, writable=False))\n\ndb.define_table(\'blogpost\',\n    Field(\'title\'),\n    Field(\'body\', \'text\'),\n    Field(\'tags\', \'list:string\'),\n    Field(\'photo_id\', \'reference image\'),\n    Field(\'document_id\', \'reference document\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now),\n    Field(\'blogpage_id\', \'reference page\', readable=False, writable=False))\n\ndb.define_table(\'comment\',\n    Field(\'body\', \'text\'),\n    Field(\'created_by\'),\n    Field(\'created_on\', \'datetime\', default=request.now),\n    Field(\'blogpost_id\', \'reference blogpost\', readable=False, writable=False))\n\n\ndb.document.name.requires = IS_NOT_IN_DB(db, \'document.name\')\ndb.document.created_on.readable = db.document.created_on.writable = False\n\ndb.comment.body.requires = IS_NOT_EMPTY()\ndb.comment.created_by.requires = IS_NOT_EMPTY()\ndb.comment.created_on.readable = db.comment.created_on.writable = False\ndb.comment.blogpost_id.requires = IS_IN_DB(db,db.blogpost)\n\ndb.blogpost.title.requires = IS_NOT_EMPTY()\ndb.blogpost.body.requires = IS_NOT_EMPTY()\ndb.blogpost.blogpage_id.requires = IS_IN_DB(db,db.page)\ndb.blogpost.photo_id.readable = db.blogpost.photo_id.writable = False\ndb.blogpost.created_on.readable = db.blogpost.created_on.writable = False\n\ndb.page.title.requires = IS_NOT_EMPTY()\ndb.page.body.reference = IS_NOT_EMPTY()\ndb.page.created_by.requires = IS_IN_DB(db, db.auth_user)\ndb.page.created_on.readable = db.page.created_on.writable = False\n\nauth.settings.registration_requires_verification = False\n# auth.settings.registration_requires_approval = False\n# auth.settings.reset_password_requires_verification = True\n\n# begin special camps information\n\ndb.define_table(\'staff\',\n    Field(\'auth_user_id\', \'reference auth_user\', default=auth.user_id, update=auth.user_id, readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'first_name\', requires=IS_NOT_EMPTY()),\n    Field(\'middle_name\', \'text\'),\n    Field(\'last_name\', requires=IS_NOT_EMPTY()),\n    Field(\'gender\', requires=IS_IN_SET([\'male\', \'female\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'dateofbirth\', type=\'date\'),\n    Field(\'street_address\', requires=IS_NOT_EMPTY()),\n    Field(\'city\', requires=IS_NOT_EMPTY()),\n    Field(\'state\', requires=IS_NOT_EMPTY()),\n    Field(\'zipcode\', requires=IS_MATCH(\'^\\d{5}(-\\d{4})?$\', error_message=\'not a zip code\')),\n    Field(\'day_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'evening_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'prefered_name\', requires=IS_NOT_EMPTY()),\n    Field(\'shirt_size\', requires=IS_IN_SET([\'adult_s\', \'adult_m\', \'adult_l\', \'adult_xl\', \'adult_2xl\', \'adult_3xl\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'email\', requires=IS_EMAIL(error_message=\'invalid email!\')),\n    Field(\'drivers_license_or_ssn\', requires=IS_NOT_EMPTY()),\n    Field(\'emergency_contact\', requires=IS_NOT_EMPTY()),\n    Field(\'emergency_contact_relationship\', requires=IS_NOT_EMPTY()),\n    Field(\'emergency_contact_primary_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'emergency_contact_secondary_phone\', \'text\'),\n    Field(\'convicted_child_related\', \'boolean\'),\n    Field(\'illegal_drugs\', \'boolean\'),\n    Field(\'consent_sig_background_check\', requires=IS_NOT_EMPTY()),\n    Field(\'consent_sig_date\', default=request.now, readable=False, writable=False),\n    Field(\'prefered_position\', requires=IS_IN_SET([\'nurse\', \'activity leader\', \'cabin parent\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'can_swim\', \'boolean\'),\n    Field(\'describe_horse_exp\', requires=IS_NOT_EMPTY()),\n    Field(\'special_training\', requires=IS_NOT_EMPTY()),\n    Field(\'prev_experience_special_needs\', requires=IS_NOT_EMPTY()),\n    Field(\'has_disability\', \'boolean\',\n        Field(\'describe_disability\', requires=IS_NOT_EMPTY())),\n    Field(\'taking_prescriptions\', \'boolean\'),\n    Field(\'date_preference\', requires=IS_IN_SET([\'June 5-10 Teens and Adults\', \'June 12-17 Children and Teens\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'willing_to_consider_other_session\', \'boolean\'),\n    Field(\'part_time_dates\', \'text\'),\n    Field(\'license_revoked\', \'boolean\'),\n    Field(\'license_signature\', requires=IS_NOT_EMPTY()),\n    Field(\'license_date\', default=request.now, readable=False, writable=False),\n    Field(\'first_reference_name\', requires=IS_NOT_EMPTY()),\n    Field(\'first_reference_relationship\', requires=IS_NOT_EMPTY()),\n    Field(\'first_best_time_call\', \'text\'),\n    Field(\'first_reference_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'second_reference_name\', requires=IS_NOT_EMPTY()),\n    Field(\'second_reference_relationship\', requires=IS_NOT_EMPTY()),\n    Field(\'second_best_time_call\', \'text\'),\n    Field(\'second_reference_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'consent_signature\', requires=IS_NOT_EMPTY()),\n    Field(\'waiver_signature\', requires=IS_NOT_EMPTY()),\n    Field(\'waiver_date\', default=request.now, readable=False, writable=False),\n    Field(\'health_policy_issued_to\', requires=IS_NOT_EMPTY()),\n    Field(\'policy_number\', requires=IS_NOT_EMPTY()),\n    Field(\'policy_group_number\', requires=IS_NOT_EMPTY()))\n\ndb.staff.auth_user_id.requires = IS_IN_DB(db, db.auth_user)\n\n\ndb.define_table(\'counselor\',\n    Field(\'auth_user_id\', \'reference auth_user\', default=auth.user_id, update=auth.user_id, readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'first_name\', requires=IS_NOT_EMPTY()),\n    Field(\'middle_name\', \'text\'),\n    Field(\'last_name\', requires=IS_NOT_EMPTY()),\n    Field(\'gender\', requires=IS_IN_SET([\'male\', \'female\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'dateofbirth\', type=\'date\'),\n    Field(\'street_address\', requires=IS_NOT_EMPTY()),\n    Field(\'city\', requires=IS_NOT_EMPTY()),\n    Field(\'state\', requires=IS_NOT_EMPTY()),\n    Field(\'zipcode\', requires=IS_MATCH(\'^\\d{5}(-\\d{4})?$\', error_message=\'not a zip code\')),\n    Field(\'phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'shirt_size\', requires=IS_IN_SET([\'adult_s\', \'adult_m\', \'adult_l\', \'adult_xl\', \'adult_2xl\', \'adult_3xl\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'nickname\', \'text\'),\n    Field(\'email\',requires=IS_EMAIL(error_message=\'invalid email!\')),\n    Field(\'parents_names\', requires=IS_NOT_EMPTY()),\n    Field(\'home_phone\', \'text\'),\n    Field(\'parents_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'emergency_contact\', requires=IS_NOT_EMPTY()),\n    Field(\'emergency_contact_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'health_insurance_company\', requires=IS_NOT_EMPTY()),\n    Field(\'policy_number\', requires=IS_NOT_EMPTY()),\n    Field(\'convicted_child_related\', \'boolean\'),\n    Field(\'illegal_drugs\', \'boolean\'),\n    Field(\'convicted_felony\', \'boolean\'),\n    Field(\'over_18\', \'boolean\',\n        Field(\'drivers_license\', requires=IS_NOT_EMPTY())),\n    Field(\'consent_sig_background_check\', requires=IS_NOT_EMPTY()),\n    Field(\'consent_sig_date\', default=request.now, readable=False, writable=False),\n    Field(\'high_school\', requires=IS_NOT_EMPTY()),\n    Field(\'grade\', requires=IS_NOT_EMPTY()),\n    Field(\'hobbies\', requires=IS_NOT_EMPTY()),\n    Field(\'special_training\', \'text\'),\n    Field(\'can_swim\', \'boolean\'),\n    Field(\'experience_with_disabilities\', requires=IS_NOT_EMPTY()),\n    Field(\'previous_camp_counselor\', \'boolean\'),\n    Field(\'has_disability\', \'boolean\',\n        Field(\'describe_disability\', requires=IS_NOT_EMPTY())),\n    Field(\'taking_prescriptions\', \'boolean\'),\n    Field(\'reason_for_volunteering\', requires=IS_NOT_EMPTY()),\n    Field(\'date_preference\', requires=IS_IN_SET([\'June 5-10 Teens and Adults\', \'June 12-17 Children and Teens\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'willing_to_consider_other_session\', \'boolean\'),\n    Field(\'transportation\', requires=IS_IN_SET([\n        \'I\\\'d like to take the bus to/from White pines. The bus stops at Regal Theatre in Warrenville and Plano High in Plano IL.\',\n        \'I will arrange for my own transportation to and from White Pines Ranch in Oregon, IL\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'first_reference_name\', requires=IS_NOT_EMPTY()),\n    Field(\'first_reference_relationship\', requires=IS_NOT_EMPTY()),\n    Field(\'first_best_time_call\', \'text\'),\n    Field(\'first_reference_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'second_reference_name\', requires=IS_NOT_EMPTY()),\n    Field(\'second_reference_relationship\', requires=IS_NOT_EMPTY()),\n    Field(\'second_best_time_call\', \'text\'),\n    Field(\'second_reference_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'consent_signature\', requires=IS_NOT_EMPTY()),\n    Field(\'waiver_conselor_sig\', requires=IS_NOT_EMPTY()),\n    Field(\'waiver_parent_sig\', requires=IS_NOT_EMPTY()),\n    Field(\'waiver_date\', default=request.now, readable=False, writable=False))\n\ndb.counselor.auth_user_id.requires = IS_IN_DB(db, db.auth_user)\n\ndb.define_table(\'camper\',\n    Field(\'auth_user_id\', \'reference auth_user\', default=auth.user_id, update=auth.user_id, readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'first_name\', requires=IS_NOT_EMPTY()),\n    Field(\'last_name\', requires=IS_NOT_EMPTY()),\n    Field(\'dateofbirth\', type=\'date\'),\n    Field(\'gender\', requires=IS_IN_SET([\'male\', \'female\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'street_address\', requires=IS_NOT_EMPTY()),\n    Field(\'city\', requires=IS_NOT_EMPTY()),\n    Field(\'state\', requires=IS_NOT_EMPTY()),\n    Field(\'zipcode\', requires=IS_MATCH(\'^\\d{5}(-\\d{4})?$\', error_message=\'not a zip code\')),\n    Field(\'emergency_contact\', requires=IS_NOT_EMPTY()),\n    Field(\'emergency_contact_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'health_insurance_company\', requires=IS_NOT_EMPTY()),\n    Field(\'policy_number\', requires=IS_NOT_EMPTY()),\n    Field(\'shirt_size\', requires=IS_IN_SET([\'child_s\', \'child_m\', \'child_l\', \'adult_s\', \'adult_m\', \'adult_l\', \'adult_xl\', \'adult_2xl\', \'adult_3xl\'], zero=T(\'choose one\'), error_message=\'must choose one\')))\n\ndb.camper.auth_user_id.requires = IS_IN_DB(db, db.auth_user)\n\ndb.define_table(\'guardian\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'primary_full_name\', requires=IS_NOT_EMPTY()),\n    Field(\'primary_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'second_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'street_address\', requires=IS_NOT_EMPTY()),\n    Field(\'city\', requires=IS_NOT_EMPTY()),\n    Field(\'state\', requires=IS_NOT_EMPTY()),\n    Field(\'zipcode\', requires=IS_MATCH(\'^\\d{5}(-\\d{4})?$\', error_message=\'not a zip code\')),\n    Field(\'email\', requires=IS_EMAIL(error_message=\'invalid email!\')),\n    Field(\'secondary_guardian\', \'boolean\'),\n    Field(\'secondary_full_name\', requires=IS_NOT_EMPTY()),\n    Field(\'secondary_primary_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'secondary_second_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'secondary_email\', requires=IS_EMAIL(error_message=\'invalid email!\')),\n    Field(\'secondary_relationship\', \'text\'),\n    Field(\'relationship\', requires=IS_NOT_EMPTY()))\n\ndb.guardian.camper_id.requires = IS_IN_DB(db, db.camper)\n\ndb.define_table(\'medical_information\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'medical_diagnosis\', requires=IS_NOT_EMPTY()),\n    Field(\'metal_age_ability\', requires=IS_NOT_EMPTY()),\n    Field(\'seizure_type\', requires=IS_NOT_EMPTY()),\n    Field(\'recovery_time\', requires=IS_NOT_EMPTY()),\n    Field(\'preexisting_medical_conditions\', requires=IS_NOT_EMPTY()),\n    Field(\'psychiatric_disorders\', requires=IS_NOT_EMPTY()),\n    Field(\'walks_independently\', \'boolean\'),\n    Field(\'uses_cane_or_walker\', \'boolean\'),\n    Field(\'uses_wheelchair\', \'boolean\'),\n    Field(\'needs_transfer_standby_or_assist\', \'boolean\'),\n    Field(\'is_independent_toileting\', \'boolean\'),\n    Field(\'has_bowel_and_bladder_control\', \'boolean\'),\n    Field(\'wears_depends_or_diaper\', \'boolean\'),\n    Field(\'describe_needs\', \'text\'))\n\ndb.medical_information.camper_id.requires = IS_IN_DB(db, db.camper)\n\ndb.define_table(\'eating\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'food_alergies\', \'text\'),\n    Field(\'limit_intake_of_certain_foods\', \'text\'),\n    Field(\'watch_for_overeating\', \'boolean\'),\n    Field(\'special_diet\', \'text\'),\n    Field(\'assistance_needed\', requires=IS_IN_SET([\'no help\', \'some help\', \'all help\', \'serve\', \'cut\'], zero=T(\'choose one\'), error_message=\'must choose one\')))\n\ndb.eating.camper_id.requires = IS_IN_DB(db, db.camper)\n\ndb.define_table(\'behavior\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'behavioral_problems\', \'boolean\'),\n    Field(\'describe_frequency\', \'text\'),\n    Field(\'describe_management_techniques\', \'text\'),\n    Field(\'activities_hobbies\', \'text\'),\n    Field(\'horseback_riding_experience\', requires=IS_NOT_EMPTY()))\n\ndb.behavior.camper_id.requires = IS_IN_DB(db, db.camper)\n\ndb.define_table(\'transportation\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'child_pickup\', requires=IS_IN_SET([\n        \'I\\\'ll pick up my child Friday at the campground between 12 and 1pm\',\n        \'I\\\'d like my child to take a coach bus to Regal Cantera Theatre in Warrenville near I88\',\n        \'I\\\'d like my chld to take a coach bus to Plano High School in Plano IL\'],\n        zero=T(\'please choose your preference\'),\n        error_message=\'must choose one\')))\n\ndb.transportation.camper_id.requires = IS_IN_DB(db, db.camper)\n\ndb.define_table(\'new_camper_information\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'school_work_name\', requires=IS_NOT_EMPTY()),\n    Field(\'town\', requires=IS_NOT_EMPTY()),\n    Field(\'teacher_boss\', requires=IS_NOT_EMPTY()),\n    Field(\'reference_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'been_away_without_family\', \'boolean\'),\n    Field(\'homesickness_anticipated\', \'boolean\'),\n    Field(\'previous_overnight_camp\', \'boolean\'),\n    Field(\'camp_frequency\', \'boolean\'),\n    Field(\'where_learn_about_camp\', requires=IS_NOT_EMPTY()))\n\ndb.new_camper_information.camper_id.requires = IS_IN_DB(db, db.camper)\n\ndb.define_table(\'camp_parent_questionnaire\',\n    Field(\'camper_id\', \'reference camper\', readable=False, writable=False),\n    Field(\'created_on\', \'datetime\', default=request.now, readable=False, writable=False),\n    Field(\'needs_nightlight\', \'boolean\'),\n    Field(\'needs_bedrails\', \'boolean\'),\n    Field(\'bathroom_during_night\', \'boolean\'),\n    Field(\'wanders_at_night\', \'boolean\'),\n    Field(\'wears_pajamas_helmet_braces_at_bedtime\', \'text\'),\n    Field(\'can_sleep_on_top_bunk_bed\', \'boolean\'),\n    Field(\'showering\', requires=IS_IN_SET([\'total assistance\', \'some assistance\', \'just supervise\', \'no help\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'washing_face_hands\', requires=IS_IN_SET([\'total assistance\', \'some assistance\', \'just supervise\', \'no help\'])),\n    Field(\'brushing_teeth\', requires=IS_IN_SET([\'total assistance\', \'some assistance\', \'just supervise\', \'no help\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'dressing\', requires=IS_IN_SET([\'total assistance\', \'some assistance\', \'just supervise\', \'no help\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'undressing\', requires=IS_IN_SET([\'total assistance\', \'some assistance\', \'just supervise\', \'no help\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'menstrual_care\', requires=IS_IN_SET([\'total assistance\', \'some assistance\', \'just supervise\', \'no help\'], zero=T(\'choose one\'), error_message=\'must choose one\')),\n    Field(\'special_instructions\', \'text\'),\n    Field(\'regular_bedtime\', \'text\'),\n    Field(\'regular_wakeup_time\', \'text\'),\n    Field(\'takes_naps\', \'boolean\'),\n    Field(\'usual_bedtime_routine\', \'text\'),\n    Field(\'encouraging_good_behavior\', \'text\'),\n    Field(\'limiting_poor_behavior\', \'text\'),\n    Field(\'additional_suggestions\', \'text\'),\n    Field(\'contact_if_issues\', requires=IS_NOT_EMPTY()),\n    Field(\'contact_issues_phone\', requires=IS_MATCH(\'^1?((-)\\d{3}-?|\\(\\d{3}\\))\\d{3}-?\\d{4}$\', error_message=\'not a phone number\')),\n    Field(\'fears_need_to_know\', \'text\'),\n    Field(\'friends_paired_with_names_order_by_preference\', \'text\'),\n    Field(\'other_friends_family\', \'text\'))\n\ndb.camp_parent_questionnaire.camper_id.requires = IS_IN_DB(db, db.camper)\n\n#incomplete order/cart\ndb.define_table(\'pending_transaction\',\n    Field(\'auth_user_id\', \'reference auth_user\', default=auth.user_id, update=auth.user_id, readable=False, writable=False),\n    # Field(\'user_id\', \'reference auth_user\', readable=False, writable=False),\n    Field(\'token_class\', requires=IS_IN_SET([\'A\', \'B\', \'C\'])),\n    Field(\'amount\', \'double\'),\n    Field(\'payment_system\', requires=IS_IN_SET([\'paypal\', \'dwolla\'])),\n    Field(\'confirmed\', \'boolean\', default=False, readable=False, writable=False),\n    auth.signature)\n\ndb.pending_transaction.auth_user_id.requires = IS_IN_DB(db, db.auth_user_id)\n\n# final, confirmed, purchased order\n# db.define_table(\'confirmed_transaction\',\n#     Field(\'user_id\', \'reference auth_user\', readable=False, writable=False),\n#     Field(\'token_class\', requires=IS_IN_SET(\'A\', \'B\', \'C\')),\n#     Field(\'amount\', \'double\'),\n#     Field(\'payment_system\', requires=IS_IN_SET([\'paypal\'])),\n#     Field(\'pending_id\', \'reference pending_transaction\'),\n#     Field(\'payment_system_code\'),\n#     Field(\'confirmation_time\', \'datetime\'),\n#     Field(\'tokens\', \'integer\'),\n#     auth.signature)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.AttributeError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.AttributeError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.AttributeError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.AttributeError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.AttributeError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.AttributeError object>'
+p23
+sS'args'
+p24
+S'("\'DAL\' object has no attribute \'auth_user_id\'",)'
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.AttributeError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.AttributeError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.AttributeError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.AttributeError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.AttributeError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.AttributeError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.AttributeError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.AttributeError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.AttributeError object>'
+p47
+sS'__doc__'
+p48
+S"'Attribute not found.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.AttributeError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"'DAL' object has no attribute 'auth_user_id'"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's1`\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9d4353a0-c828-40fe-82b5-811e489506e2<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_camp</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-b9f10a7e-5bfb-45d0-84e3-a1d98dfd710b<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8,ar;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>no-cache</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=127.0.0.1-b9f10a7e-5bfb-45d0-84e3-a1d98dfd710b; session_id_camp=127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c; session_id_admin=127.0.0.1-9d4353a0-c828-40fe-82b5-811e489506e2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_DNT</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_PRAGMA</td><td style="vertical-align:top;">:</td><td><div>no-cache</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/camp/default/buy_credits</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>55262</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>Wadi-Al-Sahara</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/Users/habibi/web2py/applications/camp/&#x27;, &#x27;/Users/habibi/web2py/applications/admin/&#x27;, &#x27;/Users/habibi/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x10315be18: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;192.168.1.254&#x27;, &#x27;2602:306:8b04:4570:82e6:50ff:fe0b:aec4&#x27;, &#x27;192.168.1.66&#x27;, &#x27;2602:306:8b04:4570:914a:8952:88a6:bb99&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;Wadi-Al-Sahara&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/Users/habibi/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;Mjsqt!123qwe&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8,ar;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>no-cache</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=127.0.0.1-b9f10a7e-5bfb-45d0-84e3-a1d98dfd710b; session_id_camp=127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c; session_id_admin=127.0.0.1-9d4353a0-c828-40fe-82b5-811e489506e2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_dnt</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_pragma</td><td style="vertical-align:top;">:</td><td><div>no-cache</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>Wadi-Al-Sahara</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>2602:306:8b04:4570:82e6:50ff:fe0b:aec4</div></td></tr><tr><td><div>192.168.1.66</div></td></tr><tr><td><div>192.168.1.254</div></td></tr><tr><td><div>2602:306:8b04:4570:914a:8952:88a6:bb99</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/camp/default/buy_credits</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>55262</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/camp/default/buy_credits</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>Wadi-Al-Sahara</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.12.3-stable+timestamp.2015.08.18.19.14.07</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x10219a1e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x102ec1808&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x104b946d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x10219a1e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x102ec1808&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x104b946d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py/applications/camp/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>buy_credits</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/Users/habibi/web2py/applications/camp/&#x27;, &#x27;/Users/habibi/web2py/applications/admin/&#x27;, &#x27;/Users/habibi/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x10315be18: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;192.168.1.254&#x27;, &#x27;2602:306:8b04:4570:82e6:50ff:fe0b:aec4&#x27;, &#x27;192.168.1.66&#x27;, &#x27;2602:306:8b04:4570:914a:8952:88a6:bb99&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;Wadi-Al-Sahara&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/Users/habibi/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;Mjsqt!123qwe&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>Wadi-Al-Sahara</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>2602:306:8b04:4570:82e6:50ff:fe0b:aec4</div></td></tr><tr><td><div>192.168.1.66</div></td></tr><tr><td><div>192.168.1.254</div></td></tr><tr><td><div>2602:306:8b04:4570:914a:8952:88a6:bb99</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.12.3-stable+timestamp.2015.08.18.19.14.07</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_sheduler</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 3, 17, 22, 30, 48, 676134)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/camp/default/buy_credits</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 3, 18, 2, 30, 48, 676143)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x10505d690&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/Users/habibi/web2py/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x1047e1b30, file "/Use...i/web2py/applications/camp/models/db.py", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code="db = DAL(\'sqlite://storage.sqlite\', pool_size=1)...ield(\'tokens\', \'integer\'),\\n#     auth.signature)\\n", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, ...}, layer=\'/Users/habibi/web2py/applications/camp/models/db.py\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/Users/habibi/web2py/applications/camp/models/db.py'
+p88
+sg64
+(dp89
+S'db.pending_transaction.auth_user_id.requires'
+p90
+S'<gluon.validators.IS_IN_DB object>'
+p91
+sS'db.pending_transaction.auth_user_id'
+p92
+S'<pydal.objects.Field object>'
+p93
+sS'db.auth_user_id'
+p94
+S'undefined'
+p95
+sS'db'
+p96
+S'<DAL uri="sqlite://storage.sqlite">'
+p97
+sS'IS_IN_DB'
+p98
+S"<class 'gluon.validators.IS_IN_DB'>"
+p99
+sS'db.pending_transaction'
+p100
+S'<Table pending_transaction (id,auth_user_id,toke...e,created_on,created_by,modified_on,modified_by)>'
+p101
+ssg70
+I348
+sg71
+(dp102
+I352
+S"#     Field('user_id', 'reference auth_user', readable=False, writable=False),"
+p103
+sI343
+S"    Field('amount', 'double'),"
+p104
+sI344
+S"    Field('payment_system', requires=IS_IN_SET(['paypal', 'dwolla'])),"
+p105
+sI345
+S"    Field('confirmed', 'boolean', default=False, readable=False, writable=False),"
+p106
+sI346
+S'    auth.signature)'
+p107
+sI347
+S''
+sI348
+S'db.pending_transaction.auth_user_id.requires = IS_IN_DB(db, db.auth_user_id)'
+p108
+sI349
+S''
+sI350
+S'# final, confirmed, purchased order'
+p109
+sI351
+S"# db.define_table('confirmed_transaction',"
+p110
+ssg83
+S'()'
+p111
+sg85
+S'<module>'
+p112
+sa(dp113
+g62
+S'/Users/habibi/web2py/gluon/packages/dal/pydal/base.py'
+p114
+sg64
+(dp115
+S'global BasicStorage'
+p116
+S"<class 'pydal.helpers.classes.BasicStorage'>"
+p117
+sS'self'
+p118
+S'<DAL uri="sqlite://storage.sqlite">'
+p119
+sS'BasicStorage.__getattribute__'
+p120
+S"<slot wrapper '__getattribute__' of 'object' objects>"
+p121
+sS'key'
+p122
+S"'auth_user_id'"
+p123
+ssg70
+I921
+sg71
+(dp124
+I916
+S'    def __getattr__(self, key):'
+p125
+sI917
+S"        if object.__getattribute__(self, '_lazy_tables') and \\"
+p126
+sI918
+S"                key in object.__getattribute__(self, '_LAZY_TABLES'):"
+p127
+sI919
+S'            tablename, fields, args = self._LAZY_TABLES.pop(key)'
+p128
+sI920
+S'            return self.lazy_define_table(tablename, *fields, **args)'
+p129
+sI921
+S'        return BasicStorage.__getattribute__(self, key)'
+p130
+sI922
+S''
+sI923
+S'    def __setattr__(self, key, value):'
+p131
+sI924
+S"        if key[:1] != '_' and key in self:"
+p132
+sI925
+S'            raise SyntaxError('
+p133
+ssg83
+S'(self=<DAL uri="sqlite://storage.sqlite">, key=\'auth_user_id\')'
+p134
+sg85
+S'__getattr__'
+p135
+sasS'pyver'
+p136
+S'Python 2.7.10: /usr/bin/python (prefix: /System/Library/Frameworks/Python.framework/Versions/2.7)'
+p137
+sS'session'
+p138
+g57
+(S's\x1b\n\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>d98be8d8-c02e-47cc-b68a-40c1a7f5a39b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 3, 17, 22, 30, 48, 676134)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>katemcdonald39@gmail.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>kate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>3L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>mcdonald</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">2</td><td style="vertical-align:top;">:</td><td><div>user_3</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_orderby</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_query</td><td style="vertical-align:top;">:</td><td><div>db.pending_transaction.id&gt;0</div></td></tr></table></div>'
+tRp139
+sS'etype'
+p140
+S"<type 'exceptions.AttributeError'>"
+p141
+sS'date'
+p142
+S'Thu Mar 17 22:30:48 2016'
+p143
+sS'response'
+p144
+g57
+(S's\xe4\x17\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x104b95228&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_camp</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/buy_credits/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/Users/habibi/web2py/applications/camp/sessions/1f9/122/127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c&#x27;, mode &#x27;rb+&#x27; at 0x104972780&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py/applications/camp/sessions/127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>1e83f0889c58049e2ddbbad9b301888f</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-6bf85fd2-0c93-4c43-b3d8-ff3971b23d5c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/buy_credits.html</div></td></tr></table></div>'
+tRp145
+sS'locals'
+p146
+(dp147
+S'self'
+p148
+S'<DAL uri="sqlite://storage.sqlite">'
+p149
+sS'key'
+p150
+S"'auth_user_id'"
+p151
+sssS'traceback'
+p152
+S'Traceback (most recent call last):\n  File "/Users/habibi/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/Users/habibi/web2py/applications/camp/models/db.py", line 348, in <module>\n    db.pending_transaction.auth_user_id.requires = IS_IN_DB(db, db.auth_user_id)\n  File "/Users/habibi/web2py/gluon/packages/dal/pydal/base.py", line 921, in __getattr__\n    return BasicStorage.__getattribute__(self, key)\nAttributeError: \'DAL\' object has no attribute \'auth_user_id\'\n'
+p153
+s.
