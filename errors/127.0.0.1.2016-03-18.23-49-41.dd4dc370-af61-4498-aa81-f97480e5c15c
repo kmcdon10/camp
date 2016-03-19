@@ -1,0 +1,809 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> name 'form' is not defined"
+p3
+sS'layer'
+p4
+S'/Users/habibi/web2py/applications/camp/views/default/camper.html'
+p5
+sS'code'
+p6
+S'response.write(\'<!DOCTYPE html>\\n<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if gt IE 9]><!--> \\n<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->\\n<head>\\n  <meta charset="utf-8">\\n  <meta name="viewport" content="width=1024">\\n  <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/vendor/modernizr-2.5.3.min.js"></script>\\n  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>\\n  <script>window.jQuery || document.write(\\\'<script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/vendor/jquery-1.7.2.min.js"><\\\\/script>\\\')</script>\\n  <link rel="stylesheet" href="http://covenantpines.org/wp-content/plugins/jquery-colorbox/themes/theme1/colorbox.css?ver=4.6.1">\\n  <link rel="stylesheet" href="http://covenantpines.org/wp-content/themes/covenant-pines/css/bootstrap.css">\\n  <link rel="stylesheet" href="http://covenantpines.org/wp-content/themes/covenant-pines/css/app.css">\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/wordpress-countdown-widget/js/jquery.countdown.min.js?ver=1.0\\\'></script>\\n  <script type=\\\'text/javascript\\\'>\\n  /* <![CDATA[ */\\n  var jQueryColorboxSettingsArray = {"jQueryColorboxVersion":"4.6.1","colorboxInline":"false","colorboxIframe":"false","colorboxGroupId":"","colorboxTitle":"","colorboxWidth":"false","colorboxHeight":"false","colorboxMaxWidth":"false","colorboxMaxHeight":"false","colorboxSlideshow":"false","colorboxSlideshowAuto":"false","colorboxScalePhotos":"true","colorboxPreloading":"false","colorboxOverlayClose":"true","colorboxLoop":"true","colorboxEscKey":"true","colorboxArrowKey":"true","colorboxScrolling":"true","colorboxOpacity":"0.85","colorboxTransition":"elastic","colorboxSpeed":"350","colorboxSlideshowSpeed":"2500","colorboxClose":"close","colorboxNext":"next","colorboxPrevious":"previous","colorboxSlideshowStart":"start slideshow","colorboxSlideshowStop":"stop slideshow","colorboxCurrent":"{current} of {total} images","colorboxXhrError":"This content failed to load.","colorboxImgError":"This image failed to load.","colorboxImageMaxWidth":"90%","colorboxImageMaxHeight":"90%","colorboxImageHeight":"false","colorboxImageWidth":"false","colorboxLinkHeight":"false","colorboxLinkWidth":"false","colorboxInitialHeight":"100","colorboxInitialWidth":"300","autoColorboxJavaScript":"","autoHideFlash":"","autoColorbox":"true","autoColorboxGalleries":"","addZoomOverlay":"","useGoogleJQuery":"","colorboxAddClassToLinks":""};\\n  /* ]]> */\\n  </script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/jquery-colorbox/js/jquery.colorbox-min.js?ver=1.4.33\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/jquery-colorbox/js/jquery-colorbox-wrapper-min.js?ver=4.6.1\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/pixelyoursite/js/public.js?ver=1.0\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/themes/covenant-pines/js/plugins.js\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/themes/covenant-pines/js/main.js?v=1\\\'></script>\\n  <link rel=\\\'https://api.w.org/\\\' href=\\\'http://covenantpines.org/wp-json/\\\' />\\n  <link rel="alternate" type="application/json+oembed" href="http://covenantpines.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcovenantpines.org%2Fsummer-camps%2F" />\\n  <link rel="alternate" type="text/xml+oembed" href="http://covenantpines.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcovenantpines.org%2Fsummer-camps%2F&#038;format=xml" />\\n  <!-- All in one Favicon 4.3 --><link rel="icon" href="" type="image/png"/>    \\n\\t<link rel="alternate" type="application/rss+xml" title="Special Camps Summer Camp Feed" href="">\\n  <style type="text/css">\\n    h1, h2, h3, h4, h5, h6,\\n    a,\\n    th,\\n    .highlight,\\n    #menu-secondary-navigation li, #menu-secondary-navigation a,\\n    .dropdown-menu .dropdown:first-child .title {\\n      color: #EB6C1E;\\n    } \\n        \\n    a:hover {\\n      color: #bc5618;\\n    }\\n    \\n    .media-gallery-button,\\n    #slideshow-pager .current,\\n    .nav-tabs .current-cat a {\\n      background-color: #EB6C1E;\\n    }\\n    \\n    .navbar-inner .container {\\n      background-color: #ad4a00;\\n    }\\n    \\n    .item-category {\\n      border-color: #EB6C1E;\\n      border-left-color: transparent;\\n    }\\n    \\n    .item-category span {\\n      background: #EB6C1E;\\n    }\\n    \\n          .item-covenant-pines-ministries .item-category {\\n        border-color: #915a2c;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-covenant-pines-ministries .item-category span {\\n        background: #915a2c;\\n      }\\n      \\n      .item-covenant-pines-ministries h2 a, .item-covenant-pines-ministries p a {\\n        color: #915a2c;\\n      }\\n          .item-covenant-pines-day-camp .item-category {\\n        border-color: #e9c910;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-covenant-pines-day-camp .item-category span {\\n        background: #e9c910;\\n      }\\n      \\n      .item-covenant-pines-day-camp h2 a, .item-covenant-pines-day-camp p a {\\n        color: #e9c910;\\n      }\\n          .item-silver-beach-family-area .item-category {\\n        border-color: #5396cc;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-silver-beach-family-area .item-category span {\\n        background: #5396cc;\\n      }\\n      \\n      .item-silver-beach-family-area h2 a, .item-silver-beach-family-area p a {\\n        color: #5396cc;\\n      }\\n          .item-adventurous-christians .item-category {\\n        border-color: #70b120;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-adventurous-christians .item-category span {\\n        background: #70b120;\\n      }\\n      \\n      .item-adventurous-christians h2 a, .item-adventurous-christians p a {\\n        color: #70b120;\\n      }\\n          .item-covenant-pines-bible-camp .item-category {\\n        border-color: #EB6C1E;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-covenant-pines-bible-camp .item-category span {\\n        background: #EB6C1E;\\n      }\\n      \\n      .item-covenant-pines-bible-camp h2 a, .item-covenant-pines-bible-camp p a {\\n        color: #EB6C1E;\\n      }\\n        \\n        \\n    .navbar .nav > .active > a, .navbar .nav > .active > a:hover,\\n    .navbar .nav > li > a:hover, .dropdown-hover > a,\\n    .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {\\n      background-color: #a40000;\\n      background-color: rgba(164,0,0,0.6);\\n    }\\n    \\n\\n    #menu-primary-navigation > li.active > a:before,\\n    #menu-primary-navigation > li:hover > a:before,\\n    .dropdown-hover > a:before {\\n      border-left-color: #a40000;\\n      border-left-color: rgba(164,0,0,0.6);\\n    }\\n    \\n    #menu-primary-navigation > li.active > a:after,\\n    #menu-primary-navigation > li:hover > a:after,\\n    .dropdown-hover > a:after {\\n      border-bottom-color: #a40000;\\n      border-bottom-color: rgba(164,0,0,0.6);\\n    }\\n    \\n        \\n  </style>\\n  <!--[if IE 6]>\\n    <link href="http://covenantpines.org/wp-content/themes/covenant-pines/css/ie6.min.css" rel="stylesheet">\\n    <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/ie6.min.js"></script>\\n  <![endif]-->\\n  <!--[if lt IE 9]>\\n    <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/lt-ie9.js"></script>\\n  <![endif]-->\\n</head>\\n\\n<body class="page page-id-10 page-parent page-template-default summer-camps">\\n    <div id="header">\\n    <div class="container">\\n      <div class="row">\\n        <div class="span6">\\n          <a class="brand" href="http://specialcamps.org/">\\n              <img src="/camp/static/logo" alt="Special Camps Summer Camp" />\\n          </a>\\n        </div>\\n        <div class="span6">\\n          <nav id="nav-secondary" role="navigation">\\n          <div class="menu-secondary-navigation-container"><ul id="menu-secondary-navigation" class="nav nav-pills pull-right"><li class="menu-register"><a href="">Register<small></small></a></li>\\n<li class="menu-donate"><a href="">Donate<small></small></a></li>\\n<li class="menu-wish-list"><a href="">Wish List<small></small></a></li>\\n</ul></div>          </nav>\\n        </div>\\n      </div>\\n    </div>\\n          <header id="banner" class="navbar" role="banner">\\n                <div class="navbar-inner">\\n          <div class="container">\\n                        <nav id="nav-main" role="navigation" class="nav-main-blog-5">\\n              <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="nav"><li class="menu-home"><a href="">Home<small></small></a></li>\\n<li class="menu-summer-camps current-menu-item dropdown active" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">Summer Camps</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-youth-camps dropdown" data-dropdown="dropdown"><a href=""><div class="title">Summer Camps</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-kids-kamp"><a title="Entering grades 2-3" href="">Youth <small>ages 6 - 21</small></a></li>\\n    \\t\\t<li class="menu-kids-kamp"><a title="Entering grades 2-3" href="">Adults <small>ages 21+</small></a></li>\\n\\t</ul>\\n</li>\\n\\t<li class="menu-links dropdown" data-dropdown="dropdown"><a href="#"><div class="title">Links</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-register"><a href="">Register<small></small></a></li>\\n\\t\\t<li class="menu-media-gallery"><a href="">Media Gallery<small></small></a></li>\\n\\t</ul>\\n</li>\\n</ul>\\n</li>\\n<li class="menu-retreats dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">volunteer</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-counselors"><a href="">Counselors<small></small></a></li>\\n\\t<li class="menu-facilities"><a href="">Staff<small></small></a></li>\\n\\t<li class="menu-recreation"><a href="">Nurses<small></small></a></li>\\n\\t<li class="menu-silver-beach"><a href="">Other<small></small></a></li>\\n</ul>\\n</li>\\n<li class="menu-rentals dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">Camp Life</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-counselors"><a href="">Counselors - ages 13-21<small></small></a></li>\\n\\t<li class="menu-facilities"><a href="">Staff - ages 21+<small></small></a></li>\\n\\t<li class="menu-recreation"><a href="">Nurses<small></small></a></li>\\n\\t<li class="menu-silver-beach"><a href="">Other<small></small></a></li>\\n</ul>\\n</li>\\n<li class="menu-news"><a href="">Q&amp;A<small></small></a></li>\\n<li class="menu-about dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">About</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-information dropdown" data-dropdown="dropdown"><a href="#"><div class="title">Information</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-mission"><a href="">Mission<small></small></a></li>\\n\\t\\t<li class="menu-directions"><a href="">Directions<small></small></a></li>\\n\\t\\t<li class="menu-staff"><a href="">Financial Aid<small></small></a></li>\\n\\t\\t<li class="menu-board"><a href="">Staff<small></small></a></li>\\n    \\t<li class="menu-contact"><a href="">Board<small></small></a></li>\\n\\t\\t<li class="menu-contact"><a href="">Contact<small></small></a></li>\\n\\t</ul>\\n</li>\\n\\t<li class="menu-giving dropdown" data-dropdown="dropdown"><a href=""><div class="title">Giving</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-memorial-giving"><a href="">Memorial Giving<small></small></a></li>\\n\\t\\t<li class="menu-friends-of-covenant-pines"><a href="">Friends of Special Camps<small></small></a></li>\\n\\t\\t<li class="menu-electronic-funds-transfer"><a href="">Electronic Funds Transfer<small></small></a></li>\\n\\t\\t<li class="menu-product-service-donation"><a href="">Product &#038; Service Donation<small></small></a></li>\\n\\t\\t<li class="menu-estate-gifts"><a href="">Estate Gifts<small></small></a></li>\\n\\t\\t<li class="menu-wish-list"><a href="">Wish List<small></small></a></li>\\n\\t</ul>\\n</li>\\n</ul>\\n</li>\\n</ul></div>            </nav>\\n          </div>\\n        </div>\\n      </header><!-- end #banner -->\\n      </div><!-- end .header -->\\n\\n    <div id="wrap" class="container" role="document">\\n      <div id="content" class="row">\\n<div id="main" class="span9" role="main">\\n        \', escape=False)\nresponse.write(\'\\n\\n<div class="container">\\n    <div class="row">\\n        <div id="web2py_user_form" class="col-lg-6">\\n        \\t<p class=\\\'lead\\\'>Please fill out the form below</p>\\n            \', escape=False)\nresponse.write(form)\nresponse.write(\'\\n        </div>\\n    </div>\\n</div>\\n\', escape=False)\nresponse.write(\'\\n      </div>\\n<aside id="sidebar" class="span3" role="complementary">\\n<div>\\n<section id="follow-us-widget" class="widget-3 widget widget_text"><div class="widget-3 widget-inner"><h3>Follow Us</h3>\\t\\t\\t<div class="textwidget"><a href="https://www.facebook.com/Special-Camps-151206268237679/" id="facebook-link" class="social-link" target="_blank">Facebook</a>\\n<a href="https://twitter.com/" id="twitter-link" class="social-link">Twitter</a>\\n<a href="http://instagram.com/" id="instagram-link" class="social-link">Instagram</a>\\n<a href="https://vimeo.com/" id="vimeo-link" class="social-link" target="_blank">Vimeo</a></div>\\n\\t\\t</div></section><section id="search-widget" class="widget-4 widget widget_search"><div class="widget-4 widget-inner"><h3>Find what you need</h3><form role="search" method="get" id="searchform" class="form-search" action="/">\\n  <label class="visuallyhidden" for="s">Search for:</label>\\n  <input type="text" value="" name="s" id="s" class="search-query" placeholder="Search">\\n  <input type="submit" id="searchsubmit" value="Search" class="btn">\\n</form></div></section><section id="related_content_widget-2" class="widget-5 widget-last widget widget_related_content_widget"><div class="widget-5 widget-last widget-inner"><h3>Resources</h3><ul>\\n<li><a href="">Summer Brochure</a></li>\\n<li><a href="">Financial Aid Application</a></li>\\n</ul>\\n</div></section></div>\\n</aside><!-- /#sidebar -->\\n        </div><!-- /#content -->\\n  \\n  </div><!-- /#wrap -->\\n\\n    <div id="content-info-wrapper">\\n    <footer id="content-info" class="container" role="contentinfo">\\n            <section id="diamond-bloglist" class="widget-1 widget-first widget DiamondBL_widget_endView"><div class="widget-1 widget-first widget-inner"><h3>Join Us</h3>\\n                 <ul><li>\\n                <a href="http://specialcamps.org/">Camper Application</a></li><li><a href="">Counselor Application</a></li><li><a href="">Staff Application</a></li><li><a href="">Camp Nurse Application</a></li></ul>\\n                </div></section>\\n        <section id="image-gallery-widget" class="widget-2 widget widget_search"><div class="widget-2 widget-inner"><h3>Recent Images</h3><ul class="wGallery"><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-59-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-58-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-57-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-56-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-55-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-54-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-53-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-52-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-51-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-50-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-49-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-48-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li></ul></div></section>\\n        <section id="quick-links-widget" class="widget-3 widget widget_nav_menu">\\n            <div class="widget-3 widget-inner">\\n                <h3>Quick Links</h3><div class="menu-footer-quick-links-container"><ul id="menu-footer-quick-links" class="menu">\\n<li id="menu-item-489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-489"><a href="">About Us</a></li>\\n<li id="menu-item-612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-612"><a href="">Media Gallery</a></li>\\n<li id="menu-item-492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492"><a href="">Donate</a></li>\\n<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"><a href="">Home</a></li>\\n</ul></div></div></section>\\n        <section id="contact-info-widget" class="widget-4 widget widget_text"><div class="widget-4 widget-inner"><h3>Special Camps Camp</h3>\\t\\t\\t<div class="textwidget">\\n<p>26W 684 Lindsey Ave.<br/>\\nWinfield, IL 60190<br/>\\n630.690.0944<br/>\\nmcdcolleen@yahoo.com</p>\\n<p>&copy; 2016 Special Camps Summer Camp,<br/>All Rights Reserved</p>\\n</div>\\n\\t\\t</div></section>\\n        </footer>\\n  </div><!-- end #content-info-wrapper -->\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20\\\'></script>\\n<script type=\\\'text/javascript\\\'>\\n/* <![CDATA[ */\\nvar _wpcf7 = {"loaderUrl":"http:\\\\/\\\\/covenantpines.org\\\\/wp-content\\\\/plugins\\\\/contact-form-7\\\\/images\\\\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};\\n/* ]]> */\\n</script>\\n<script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.4\\\'></script>\\n<script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-includes/js/wp-embed.min.js?ver=4.4.2\\\'></script>\\n</body>\\n</html>\\n\', escape=False)'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.NameError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.NameError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.NameError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.NameError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.NameError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.NameError object>'
+p23
+sS'args'
+p24
+S'("name \'form\' is not defined",)'
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.NameError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.NameError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.NameError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.NameError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.NameError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.NameError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.NameError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.NameError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.NameError object>'
+p47
+sS'__doc__'
+p48
+S"'Name not found globally.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.NameError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"name 'form' is not defined"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S'sjX\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-29dc40f0-9d20-4c21-b51a-e08b1eb38cd5<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_camp</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8,ar;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_admin=127.0.0.1-29dc40f0-9d20-4c21-b51a-e08b1eb38cd5; session_id_camp=127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_DNT</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/camp/default/camper</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>62959</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>Wadi-Al-Sahara.local</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/Users/habibi/web2py/applications/camp/&#x27;, &#x27;/Users/habibi/web2py/applications/admin/&#x27;, &#x27;/Users/habibi/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x10ef6fe18: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;fe80::82e6:50ff:fe0b:aec4%en0&#x27;, &#x27;2602:306:8b04:4570:82e6:50ff:fe0b:aec4&#x27;, &#x27;192.168.1.66&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;Wadi-Al-Sahara.local&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/Users/habibi/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;Mjsqt!123qwe&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8,ar;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_admin=127.0.0.1-29dc40f0-9d20-4c21-b51a-e08b1eb38cd5; session_id_camp=127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_dnt</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>fe80::82e6:50ff:fe0b:aec4%en0</div></td></tr><tr><td><div>Wadi-Al-Sahara.local</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>2602:306:8b04:4570:82e6:50ff:fe0b:aec4</div></td></tr><tr><td><div>wadi-al-sahara.local</div></td></tr><tr><td><div>192.168.1.66</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/camp/default/camper</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>62959</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/camp/default/camper</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>Wadi-Al-Sahara.local</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.12.3-stable+timestamp.2015.08.18.19.14.07</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x10dfae1e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x10ecd5808&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x1104024d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x10dfae1e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x10ecd5808&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x1104024d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py/applications/camp/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>camper</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/Users/habibi/web2py/applications/camp/&#x27;, &#x27;/Users/habibi/web2py/applications/admin/&#x27;, &#x27;/Users/habibi/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x10ef6fe18: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;fe80::82e6:50ff:fe0b:aec4%en0&#x27;, &#x27;2602:306:8b04:4570:82e6:50ff:fe0b:aec4&#x27;, &#x27;192.168.1.66&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;Wadi-Al-Sahara.local&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/Users/habibi/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;Mjsqt!123qwe&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>fe80::82e6:50ff:fe0b:aec4%en0</div></td></tr><tr><td><div>Wadi-Al-Sahara.local</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>2602:306:8b04:4570:82e6:50ff:fe0b:aec4</div></td></tr><tr><td><div>wadi-al-sahara.local</div></td></tr><tr><td><div>192.168.1.66</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.12.3-stable+timestamp.2015.08.18.19.14.07</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_sheduler</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 3, 18, 23, 49, 41, 951387)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/camp/default/camper</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 3, 19, 3, 49, 41, 951394)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x110b59950&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/Users/habibi/web2py/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x110df3330, file "/Use...ications/camp/views/default/camper.html", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code=r"response.write(\'<!DOCTYPE html>\\n<!--[if lt IE 7...2\\\'></script>\\n</body>\\n</html>\\n\', escape=False)", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, ...}, layer=\'/Users/habibi/web2py/applications/camp/views/default/camper.html\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/Users/habibi/web2py/applications/camp/views/default/camper.html'
+p88
+sg64
+(dp89
+S'div'
+p90
+S'undefined'
+p91
+ssg70
+I3
+sg71
+(dp92
+I1
+S'response.write(\'<!DOCTYPE html>\\n<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->\\n<!--[if gt IE 9]><!--> \\n<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->\\n<head>\\n  <meta charset="utf-8">\\n  <meta name="viewport" content="width=1024">\\n  <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/vendor/modernizr-2.5.3.min.js"></script>\\n  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>\\n  <script>window.jQuery || document.write(\\\'<script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/vendor/jquery-1.7.2.min.js"><\\\\/script>\\\')</script>\\n  <link rel="stylesheet" href="http://covenantpines.org/wp-content/plugins/jquery-colorbox/themes/theme1/colorbox.css?ver=4.6.1">\\n  <link rel="stylesheet" href="http://covenantpines.org/wp-content/themes/covenant-pines/css/bootstrap.css">\\n  <link rel="stylesheet" href="http://covenantpines.org/wp-content/themes/covenant-pines/css/app.css">\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/wordpress-countdown-widget/js/jquery.countdown.min.js?ver=1.0\\\'></script>\\n  <script type=\\\'text/javascript\\\'>\\n  /* <![CDATA[ */\\n  var jQueryColorboxSettingsArray = {"jQueryColorboxVersion":"4.6.1","colorboxInline":"false","colorboxIframe":"false","colorboxGroupId":"","colorboxTitle":"","colorboxWidth":"false","colorboxHeight":"false","colorboxMaxWidth":"false","colorboxMaxHeight":"false","colorboxSlideshow":"false","colorboxSlideshowAuto":"false","colorboxScalePhotos":"true","colorboxPreloading":"false","colorboxOverlayClose":"true","colorboxLoop":"true","colorboxEscKey":"true","colorboxArrowKey":"true","colorboxScrolling":"true","colorboxOpacity":"0.85","colorboxTransition":"elastic","colorboxSpeed":"350","colorboxSlideshowSpeed":"2500","colorboxClose":"close","colorboxNext":"next","colorboxPrevious":"previous","colorboxSlideshowStart":"start slideshow","colorboxSlideshowStop":"stop slideshow","colorboxCurrent":"{current} of {total} images","colorboxXhrError":"This content failed to load.","colorboxImgError":"This image failed to load.","colorboxImageMaxWidth":"90%","colorboxImageMaxHeight":"90%","colorboxImageHeight":"false","colorboxImageWidth":"false","colorboxLinkHeight":"false","colorboxLinkWidth":"false","colorboxInitialHeight":"100","colorboxInitialWidth":"300","autoColorboxJavaScript":"","autoHideFlash":"","autoColorbox":"true","autoColorboxGalleries":"","addZoomOverlay":"","useGoogleJQuery":"","colorboxAddClassToLinks":""};\\n  /* ]]> */\\n  </script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/jquery-colorbox/js/jquery.colorbox-min.js?ver=1.4.33\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/jquery-colorbox/js/jquery-colorbox-wrapper-min.js?ver=4.6.1\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/pixelyoursite/js/public.js?ver=1.0\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/themes/covenant-pines/js/plugins.js\\\'></script>\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/themes/covenant-pines/js/main.js?v=1\\\'></script>\\n  <link rel=\\\'https://api.w.org/\\\' href=\\\'http://covenantpines.org/wp-json/\\\' />\\n  <link rel="alternate" type="application/json+oembed" href="http://covenantpines.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcovenantpines.org%2Fsummer-camps%2F" />\\n  <link rel="alternate" type="text/xml+oembed" href="http://covenantpines.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcovenantpines.org%2Fsummer-camps%2F&#038;format=xml" />\\n  <!-- All in one Favicon 4.3 --><link rel="icon" href="" type="image/png"/>    \\n\\t<link rel="alternate" type="application/rss+xml" title="Special Camps Summer Camp Feed" href="">\\n  <style type="text/css">\\n    h1, h2, h3, h4, h5, h6,\\n    a,\\n    th,\\n    .highlight,\\n    #menu-secondary-navigation li, #menu-secondary-navigation a,\\n    .dropdown-menu .dropdown:first-child .title {\\n      color: #EB6C1E;\\n    } \\n        \\n    a:hover {\\n      color: #bc5618;\\n    }\\n    \\n    .media-gallery-button,\\n    #slideshow-pager .current,\\n    .nav-tabs .current-cat a {\\n      background-color: #EB6C1E;\\n    }\\n    \\n    .navbar-inner .container {\\n      background-color: #ad4a00;\\n    }\\n    \\n    .item-category {\\n      border-color: #EB6C1E;\\n      border-left-color: transparent;\\n    }\\n    \\n    .item-category span {\\n      background: #EB6C1E;\\n    }\\n    \\n          .item-covenant-pines-ministries .item-category {\\n        border-color: #915a2c;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-covenant-pines-ministries .item-category span {\\n        background: #915a2c;\\n      }\\n      \\n      .item-covenant-pines-ministries h2 a, .item-covenant-pines-ministries p a {\\n        color: #915a2c;\\n      }\\n          .item-covenant-pines-day-camp .item-category {\\n        border-color: #e9c910;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-covenant-pines-day-camp .item-category span {\\n        background: #e9c910;\\n      }\\n      \\n      .item-covenant-pines-day-camp h2 a, .item-covenant-pines-day-camp p a {\\n        color: #e9c910;\\n      }\\n          .item-silver-beach-family-area .item-category {\\n        border-color: #5396cc;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-silver-beach-family-area .item-category span {\\n        background: #5396cc;\\n      }\\n      \\n      .item-silver-beach-family-area h2 a, .item-silver-beach-family-area p a {\\n        color: #5396cc;\\n      }\\n          .item-adventurous-christians .item-category {\\n        border-color: #70b120;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-adventurous-christians .item-category span {\\n        background: #70b120;\\n      }\\n      \\n      .item-adventurous-christians h2 a, .item-adventurous-christians p a {\\n        color: #70b120;\\n      }\\n          .item-covenant-pines-bible-camp .item-category {\\n        border-color: #EB6C1E;\\n        border-left-color: transparent;\\n      }\\n      \\n      .item-covenant-pines-bible-camp .item-category span {\\n        background: #EB6C1E;\\n      }\\n      \\n      .item-covenant-pines-bible-camp h2 a, .item-covenant-pines-bible-camp p a {\\n        color: #EB6C1E;\\n      }\\n        \\n        \\n    .navbar .nav > .active > a, .navbar .nav > .active > a:hover,\\n    .navbar .nav > li > a:hover, .dropdown-hover > a,\\n    .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {\\n      background-color: #a40000;\\n      background-color: rgba(164,0,0,0.6);\\n    }\\n    \\n\\n    #menu-primary-navigation > li.active > a:before,\\n    #menu-primary-navigation > li:hover > a:before,\\n    .dropdown-hover > a:before {\\n      border-left-color: #a40000;\\n      border-left-color: rgba(164,0,0,0.6);\\n    }\\n    \\n    #menu-primary-navigation > li.active > a:after,\\n    #menu-primary-navigation > li:hover > a:after,\\n    .dropdown-hover > a:after {\\n      border-bottom-color: #a40000;\\n      border-bottom-color: rgba(164,0,0,0.6);\\n    }\\n    \\n        \\n  </style>\\n  <!--[if IE 6]>\\n    <link href="http://covenantpines.org/wp-content/themes/covenant-pines/css/ie6.min.css" rel="stylesheet">\\n    <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/ie6.min.js"></script>\\n  <![endif]-->\\n  <!--[if lt IE 9]>\\n    <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/lt-ie9.js"></script>\\n  <![endif]-->\\n</head>\\n\\n<body class="page page-id-10 page-parent page-template-default summer-camps">\\n    <div id="header">\\n    <div class="container">\\n      <div class="row">\\n        <div class="span6">\\n          <a class="brand" href="http://specialcamps.org/">\\n              <img src="/camp/static/logo" alt="Special Camps Summer Camp" />\\n          </a>\\n        </div>\\n        <div class="span6">\\n          <nav id="nav-secondary" role="navigation">\\n          <div class="menu-secondary-navigation-container"><ul id="menu-secondary-navigation" class="nav nav-pills pull-right"><li class="menu-register"><a href="">Register<small></small></a></li>\\n<li class="menu-donate"><a href="">Donate<small></small></a></li>\\n<li class="menu-wish-list"><a href="">Wish List<small></small></a></li>\\n</ul></div>          </nav>\\n        </div>\\n      </div>\\n    </div>\\n          <header id="banner" class="navbar" role="banner">\\n                <div class="navbar-inner">\\n          <div class="container">\\n                        <nav id="nav-main" role="navigation" class="nav-main-blog-5">\\n              <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="nav"><li class="menu-home"><a href="">Home<small></small></a></li>\\n<li class="menu-summer-camps current-menu-item dropdown active" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">Summer Camps</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-youth-camps dropdown" data-dropdown="dropdown"><a href=""><div class="title">Summer Camps</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-kids-kamp"><a title="Entering grades 2-3" href="">Youth <small>ages 6 - 21</small></a></li>\\n    \\t\\t<li class="menu-kids-kamp"><a title="Entering grades 2-3" href="">Adults <small>ages 21+</small></a></li>\\n\\t</ul>\\n</li>\\n\\t<li class="menu-links dropdown" data-dropdown="dropdown"><a href="#"><div class="title">Links</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-register"><a href="">Register<small></small></a></li>\\n\\t\\t<li class="menu-media-gallery"><a href="">Media Gallery<small></small></a></li>\\n\\t</ul>\\n</li>\\n</ul>\\n</li>\\n<li class="menu-retreats dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">volunteer</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-counselors"><a href="">Counselors<small></small></a></li>\\n\\t<li class="menu-facilities"><a href="">Staff<small></small></a></li>\\n\\t<li class="menu-recreation"><a href="">Nurses<small></small></a></li>\\n\\t<li class="menu-silver-beach"><a href="">Other<small></small></a></li>\\n</ul>\\n</li>\\n<li class="menu-rentals dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">Camp Life</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-counselors"><a href="">Counselors - ages 13-21<small></small></a></li>\\n\\t<li class="menu-facilities"><a href="">Staff - ages 21+<small></small></a></li>\\n\\t<li class="menu-recreation"><a href="">Nurses<small></small></a></li>\\n\\t<li class="menu-silver-beach"><a href="">Other<small></small></a></li>\\n</ul>\\n</li>\\n<li class="menu-news"><a href="">Q&amp;A<small></small></a></li>\\n<li class="menu-about dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">About</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t<li class="menu-information dropdown" data-dropdown="dropdown"><a href="#"><div class="title">Information</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-mission"><a href="">Mission<small></small></a></li>\\n\\t\\t<li class="menu-directions"><a href="">Directions<small></small></a></li>\\n\\t\\t<li class="menu-staff"><a href="">Financial Aid<small></small></a></li>\\n\\t\\t<li class="menu-board"><a href="">Staff<small></small></a></li>\\n    \\t<li class="menu-contact"><a href="">Board<small></small></a></li>\\n\\t\\t<li class="menu-contact"><a href="">Contact<small></small></a></li>\\n\\t</ul>\\n</li>\\n\\t<li class="menu-giving dropdown" data-dropdown="dropdown"><a href=""><div class="title">Giving</div><small></small></a>\\n<ul class="dropdown-menu">\\n\\t\\t<li class="menu-memorial-giving"><a href="">Memorial Giving<small></small></a></li>\\n\\t\\t<li class="menu-friends-of-covenant-pines"><a href="">Friends of Special Camps<small></small></a></li>\\n\\t\\t<li class="menu-electronic-funds-transfer"><a href="">Electronic Funds Transfer<small></small></a></li>\\n\\t\\t<li class="menu-product-service-donation"><a href="">Product &#038; Service Donation<small></small></a></li>\\n\\t\\t<li class="menu-estate-gifts"><a href="">Estate Gifts<small></small></a></li>\\n\\t\\t<li class="menu-wish-list"><a href="">Wish List<small></small></a></li>\\n\\t</ul>\\n</li>\\n</ul>\\n</li>\\n</ul></div>            </nav>\\n          </div>\\n        </div>\\n      </header><!-- end #banner -->\\n      </div><!-- end .header -->\\n\\n    <div id="wrap" class="container" role="document">\\n      <div id="content" class="row">\\n<div id="main" class="span9" role="main">\\n        \', escape=False)'
+p93
+sI2
+S'response.write(\'\\n\\n<div class="container">\\n    <div class="row">\\n        <div id="web2py_user_form" class="col-lg-6">\\n        \\t<p class=\\\'lead\\\'>Please fill out the form below</p>\\n            \', escape=False)'
+p94
+sI3
+S'response.write(form)'
+p95
+sI4
+S"response.write('\\n        </div>\\n    </div>\\n</div>\\n', escape=False)"
+p96
+sI5
+S'response.write(\'\\n      </div>\\n<aside id="sidebar" class="span3" role="complementary">\\n<div>\\n<section id="follow-us-widget" class="widget-3 widget widget_text"><div class="widget-3 widget-inner"><h3>Follow Us</h3>\\t\\t\\t<div class="textwidget"><a href="https://www.facebook.com/Special-Camps-151206268237679/" id="facebook-link" class="social-link" target="_blank">Facebook</a>\\n<a href="https://twitter.com/" id="twitter-link" class="social-link">Twitter</a>\\n<a href="http://instagram.com/" id="instagram-link" class="social-link">Instagram</a>\\n<a href="https://vimeo.com/" id="vimeo-link" class="social-link" target="_blank">Vimeo</a></div>\\n\\t\\t</div></section><section id="search-widget" class="widget-4 widget widget_search"><div class="widget-4 widget-inner"><h3>Find what you need</h3><form role="search" method="get" id="searchform" class="form-search" action="/">\\n  <label class="visuallyhidden" for="s">Search for:</label>\\n  <input type="text" value="" name="s" id="s" class="search-query" placeholder="Search">\\n  <input type="submit" id="searchsubmit" value="Search" class="btn">\\n</form></div></section><section id="related_content_widget-2" class="widget-5 widget-last widget widget_related_content_widget"><div class="widget-5 widget-last widget-inner"><h3>Resources</h3><ul>\\n<li><a href="">Summer Brochure</a></li>\\n<li><a href="">Financial Aid Application</a></li>\\n</ul>\\n</div></section></div>\\n</aside><!-- /#sidebar -->\\n        </div><!-- /#content -->\\n  \\n  </div><!-- /#wrap -->\\n\\n    <div id="content-info-wrapper">\\n    <footer id="content-info" class="container" role="contentinfo">\\n            <section id="diamond-bloglist" class="widget-1 widget-first widget DiamondBL_widget_endView"><div class="widget-1 widget-first widget-inner"><h3>Join Us</h3>\\n                 <ul><li>\\n                <a href="http://specialcamps.org/">Camper Application</a></li><li><a href="">Counselor Application</a></li><li><a href="">Staff Application</a></li><li><a href="">Camp Nurse Application</a></li></ul>\\n                </div></section>\\n        <section id="image-gallery-widget" class="widget-2 widget widget_search"><div class="widget-2 widget-inner"><h3>Recent Images</h3><ul class="wGallery"><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-59-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-58-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-57-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-56-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-55-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-54-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-53-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-52-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-51-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-50-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-49-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-48-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li></ul></div></section>\\n        <section id="quick-links-widget" class="widget-3 widget widget_nav_menu">\\n            <div class="widget-3 widget-inner">\\n                <h3>Quick Links</h3><div class="menu-footer-quick-links-container"><ul id="menu-footer-quick-links" class="menu">\\n<li id="menu-item-489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-489"><a href="">About Us</a></li>\\n<li id="menu-item-612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-612"><a href="">Media Gallery</a></li>\\n<li id="menu-item-492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492"><a href="">Donate</a></li>\\n<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"><a href="">Home</a></li>\\n</ul></div></div></section>\\n        <section id="contact-info-widget" class="widget-4 widget widget_text"><div class="widget-4 widget-inner"><h3>Special Camps Camp</h3>\\t\\t\\t<div class="textwidget">\\n<p>26W 684 Lindsey Ave.<br/>\\nWinfield, IL 60190<br/>\\n630.690.0944<br/>\\nmcdcolleen@yahoo.com</p>\\n<p>&copy; 2016 Special Camps Summer Camp,<br/>All Rights Reserved</p>\\n</div>\\n\\t\\t</div></section>\\n        </footer>\\n  </div><!-- end #content-info-wrapper -->\\n  <script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20\\\'></script>\\n<script type=\\\'text/javascript\\\'>\\n/* <![CDATA[ */\\nvar _wpcf7 = {"loaderUrl":"http:\\\\/\\\\/covenantpines.org\\\\/wp-content\\\\/plugins\\\\/contact-form-7\\\\/images\\\\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};\\n/* ]]> */\\n</script>\\n<script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.4\\\'></script>\\n<script type=\\\'text/javascript\\\' src=\\\'http://covenantpines.org/wp-includes/js/wp-embed.min.js?ver=4.4.2\\\'></script>\\n</body>\\n</html>\\n\', escape=False)'
+p97
+ssg83
+S'()'
+p98
+sg85
+S'<module>'
+p99
+sasS'pyver'
+p100
+S'Python 2.7.10: /usr/bin/python (prefix: /System/Library/Frameworks/Python.framework/Versions/2.7)'
+p101
+sS'session'
+p102
+g57
+(S's\xf1\x08\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>86419dd4-8195-4259-addb-13984a873a54</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 3, 18, 23, 49, 41, 951387)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>katemcdonald39@gmail.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>kate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>3L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>mcdonald</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">2</td><td style="vertical-align:top;">:</td><td><div>user_3</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp103
+sS'etype'
+p104
+S"<type 'exceptions.NameError'>"
+p105
+sS'date'
+p106
+S'Fri Mar 18 23:49:42 2016'
+p107
+sS'response'
+p108
+g57
+(S's\xe7\x1d\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x110b46848&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_camp</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">logo</td><td style="vertical-align:top;">:</td><td><div><a class="navbar-brand" href="http://www.specialcamps.org/" id="camp-logo"><b>Special Camps</b></a></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/camp/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">author</td><td style="vertical-align:top;">:</td><td><div>Kate McDonald &lt;katemcdonald39@gmail.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">description</td><td style="vertical-align:top;">:</td><td><div>Special Camps Summer Camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generator</td><td style="vertical-align:top;">:</td><td><div>Special Camps, an overnight summer camp for children and adults with special needs</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">keywords</td><td style="vertical-align:top;">:</td><td><div>special needs, summer camp, downsyndrom</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/camper/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/Users/habibi/web2py/applications/camp/sessions/10c/048/127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6&#x27;, mode &#x27;rb+&#x27; at 0x110c39b70&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/Users/habibi/web2py/applications/camp/sessions/127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>4ffc8608f3f1b7006ed66b607fe80957</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-a4c0edea-1aad-4645-9d05-042c87ba14c6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>camp</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">subtitle</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">title</td><td style="vertical-align:top;">:</td><td><div>Special Camps</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/camper.html</div></td></tr></table></div>'
+tRp109
+sS'locals'
+p110
+(dp111
+S'Service'
+p112
+S"<class 'gluon.tools.Service'>"
+p113
+sS'OBJECT'
+p114
+S"<class 'gluon.html.OBJECT'>"
+p115
+sS'SQLDB'
+p116
+S"<class 'pydal.base.DAL'>"
+p117
+sg102
+S"<Storage {'flash': None, 'auth': <Storage {'reme...45030', '7d0682a6-ea31-478c-af44-0d65f7fbe708']}>"
+p118
+sS'LINK'
+p119
+S"<class 'gluon.html.LINK'>"
+p120
+sS'BR'
+p121
+S"<class 'gluon.html.BR'>"
+p122
+sS'local_import'
+p123
+S'<function <lambda>>'
+p124
+sS'OPTGROUP'
+p125
+S"<class 'gluon.html.OPTGROUP'>"
+p126
+sS'__package__'
+p127
+S'None'
+p128
+sS'PRE'
+p129
+S"<class 'gluon.html.PRE'>"
+p130
+sS'IS_INT_IN_RANGE'
+p131
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p132
+sS'IS_LOWER'
+p133
+S"<class 'gluon.validators.IS_LOWER'>"
+p134
+sS'IS_STRONG'
+p135
+S"<class 'gluon.validators.IS_STRONG'>"
+p136
+sS'Recaptcha'
+p137
+S"<class 'gluon.tools.Recaptcha'>"
+p138
+sS'cache'
+p139
+S'<gluon.cache.Cache object>'
+p140
+sS'paypal_id'
+p141
+S"'mcdcolleen@yahoo.com'"
+p142
+sS'IS_IN_DB'
+p143
+S"<class 'gluon.validators.IS_IN_DB'>"
+p144
+sS'TAG'
+p145
+S'<gluon.html.__TAG__ object>'
+p146
+sS'SQLField'
+p147
+S"<class 'pydal.objects.Field'>"
+p148
+sS'BODY'
+p149
+S"<class 'gluon.html.BODY'>"
+p150
+sS'IS_DATE_IN_RANGE'
+p151
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p152
+sS'IFRAME'
+p153
+S"<class 'gluon.html.IFRAME'>"
+p154
+sS'URL'
+p155
+S'<function URL>'
+p156
+sS'__file__'
+p157
+S"'/Users/habibi/web2py/applications/camp/views/default/camper.html'"
+p158
+sS'db'
+p159
+S'<DAL uri="sqlite://storage.sqlite">'
+p160
+sS'auth'
+p161
+S'<gluon.tools.Auth object>'
+p162
+sS'IS_EMPTY_OR'
+p163
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p164
+sS'P'
+S"<class 'gluon.html.P'>"
+p165
+sS'TFOOT'
+p166
+S"<class 'gluon.html.TFOOT'>"
+p167
+sS'XHTML'
+p168
+S"<class 'gluon.html.XHTML'>"
+p169
+sS'datetime'
+p170
+S"<module 'datetime' from '/System/Library/Framewo...sions/2.7/lib/python2.7/lib-dynload/datetime.so'>"
+p171
+sS'ON'
+p172
+S'True'
+p173
+sS'OL'
+p174
+S"<class 'gluon.html.OL'>"
+p175
+sS'TEXTAREA'
+p176
+S"<class 'gluon.html.TEXTAREA'>"
+p177
+sS'MENU'
+p178
+S"<class 'gluon.html.MENU'>"
+p179
+sS'IS_IMAGE'
+p180
+S"<class 'gluon.validators.IS_IMAGE'>"
+p181
+sS'reverse_geocode'
+p182
+S'<function reverse_geocode>'
+p183
+sS'EM'
+p184
+S"<class 'gluon.html.EM'>"
+p185
+sS'CODE'
+p186
+S"<class 'gluon.html.CODE'>"
+p187
+sS'HTTP'
+p188
+S"<class 'gluon.http.HTTP'>"
+p189
+sS'HR'
+p190
+S"<class 'gluon.html.HR'>"
+p191
+sS'write_logs'
+p192
+S'<function write_logs>'
+p193
+sS'STYLE'
+p194
+S"<class 'gluon.html.STYLE'>"
+p195
+sS'LABEL'
+p196
+S"<class 'gluon.html.LABEL'>"
+p197
+sS'CLEANUP'
+p198
+S"<class 'gluon.validators.CLEANUP'>"
+p199
+sS'SELECT'
+p200
+S"<class 'gluon.html.SELECT'>"
+p201
+sS'CENTER'
+p202
+S"<class 'gluon.html.CENTER'>"
+p203
+sS'prettydate'
+p204
+S'<function prettydate>'
+p205
+sS'Crud'
+p206
+S"<class 'gluon.tools.Crud'>"
+p207
+sS'Auth'
+p208
+S"<class 'gluon.tools.Auth'>"
+p209
+sS'DEVELOPMENT_MENU'
+p210
+S'False'
+p211
+sS'__builtins__'
+p212
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p213
+sS'HTML'
+p214
+S"<class 'gluon.html.HTML'>"
+p215
+sS'SQLFORM'
+p216
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p217
+sS'LOAD'
+p218
+S'<function LOAD>'
+p219
+sS'redirect'
+p220
+S'<function redirect>'
+p221
+sS'FIELDSET'
+p222
+S"<class 'gluon.html.FIELDSET'>"
+p223
+sS'IS_EQUAL_TO'
+p224
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p225
+sS'embed64'
+p226
+S'<function embed64>'
+p227
+sS'IS_LIST_OF'
+p228
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p229
+sS'INPUT'
+p230
+S"<class 'gluon.html.INPUT'>"
+p231
+sS'EMBED'
+p232
+S"<class 'gluon.html.EMBED'>"
+p233
+sS'_'
+S'<function _>'
+p234
+sS'H2'
+p235
+S"<class 'gluon.html.H2'>"
+p236
+sS'H3'
+p237
+S"<class 'gluon.html.H3'>"
+p238
+sS'BUTTON'
+p239
+S"<class 'gluon.html.BUTTON'>"
+p240
+sS'H1'
+p241
+S"<class 'gluon.html.H1'>"
+p242
+sS'H6'
+p243
+S"<class 'gluon.html.H6'>"
+p244
+sS'H4'
+p245
+S"<class 'gluon.html.H4'>"
+p246
+sS'H5'
+p247
+S"<class 'gluon.html.H5'>"
+p248
+sS'UL'
+p249
+S"<class 'gluon.html.UL'>"
+p250
+sS'IS_UPPER'
+p251
+S"<class 'gluon.validators.IS_UPPER'>"
+p252
+sS'xmlescape'
+p253
+S'<function xmlescape>'
+p254
+sS'IS_TIME'
+p255
+S"<class 'gluon.validators.IS_TIME'>"
+p256
+sS'OPTION'
+p257
+S"<class 'gluon.html.OPTION'>"
+p258
+sS'TITLE'
+p259
+S"<class 'gluon.html.TITLE'>"
+p260
+sS'CRYPT'
+p261
+S"<class 'gluon.validators.CRYPT'>"
+p262
+sS'paypal_return_url'
+p263
+S"'http://localhost:8000/camp/default/success/paypal'"
+p264
+sS'MARKMIN'
+p265
+S"<class 'gluon.html.MARKMIN'>"
+p266
+sS'Recaptcha2'
+p267
+S"<class 'gluon.tools.Recaptcha2'>"
+p268
+sS'__name__'
+p269
+S"'__restricted__'"
+p270
+sS'STRONG'
+p271
+S"<class 'gluon.html.STRONG'>"
+p272
+sS'COL'
+p273
+S"<class 'gluon.html.COL'>"
+p274
+sS'SCRIPT'
+p275
+S"<class 'gluon.html.SCRIPT'>"
+p276
+sS'geocode'
+p277
+S'<function geocode>'
+p278
+sS'TABLE'
+p279
+S"<class 'gluon.html.TABLE'>"
+p280
+sS'IS_IPV4'
+p281
+S"<class 'gluon.validators.IS_IPV4'>"
+p282
+sS'IS_LENGTH'
+p283
+S"<class 'gluon.validators.IS_LENGTH'>"
+p284
+sS'IS_IPV6'
+p285
+S"<class 'gluon.validators.IS_IPV6'>"
+p286
+sS'XML'
+p287
+S"<class 'gluon.html.XML'>"
+p288
+sS'Wiki'
+p289
+S"<class 'gluon.tools.Wiki'>"
+p290
+sS'IS_DATETIME'
+p291
+S"<class 'gluon.validators.IS_DATETIME'>"
+p292
+sS'IMG'
+p293
+S"<class 'gluon.html.IMG'>"
+p294
+sS'SQLTABLE'
+p295
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p296
+sS'IS_MATCH'
+p297
+S"<class 'gluon.validators.IS_MATCH'>"
+p298
+sS'IS_ALPHANUMERIC'
+p299
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p300
+sS'generate_tokens'
+p301
+S'<function generate_tokens>'
+p302
+sS'SPAN'
+p303
+S"<class 'gluon.html.SPAN'>"
+p304
+sS'IS_JSON'
+p305
+S"<class 'gluon.validators.IS_JSON'>"
+p306
+sS'IS_IPADDRESS'
+p307
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p308
+sS'IS_SLUG'
+p309
+S"<class 'gluon.validators.IS_SLUG'>"
+p310
+sS'BEAUTIFY'
+p311
+S"<class 'gluon.html.BEAUTIFY'>"
+p312
+sS'META'
+p313
+S"<class 'gluon.html.META'>"
+p314
+sS'fetch'
+p315
+S'<function fetch>'
+p316
+sS'IS_DATE'
+p317
+S"<class 'gluon.validators.IS_DATE'>"
+p318
+sS'IS_EMAIL'
+p319
+S"<class 'gluon.validators.IS_EMAIL'>"
+p320
+sS'IS_NOT_EMPTY'
+p321
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p322
+sS'ipn_handler'
+p323
+S"'http://localhost:8000/camp/default/ipn'"
+p324
+sS'TBODY'
+p325
+S"<class 'gluon.html.TBODY'>"
+p326
+sS'CAT'
+p327
+S"<class 'gluon.html.CAT'>"
+p328
+sS'Field'
+p329
+S"<class 'pydal.objects.Field'>"
+p330
+sS'B'
+S"<class 'gluon.html.B'>"
+p331
+sS'IS_LIST_OF_EMAILS'
+p332
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p333
+sS'Mail'
+p334
+S"<class 'gluon.tools.Mail'>"
+p335
+sS'DIV'
+p336
+S"<class 'gluon.html.DIV'>"
+p337
+sS'LEGEND'
+p338
+S"<class 'gluon.html.LEGEND'>"
+p339
+sS'COLGROUP'
+p340
+S"<class 'gluon.html.COLGROUP'>"
+p341
+sS'DAL'
+p342
+S"<class 'pydal.base.DAL'>"
+p343
+sS'ASSIGNJS'
+p344
+S'<function ASSIGNJS>'
+p345
+sS'TR'
+p346
+S"<class 'gluon.html.TR'>"
+p347
+sS'LI'
+p348
+S"<class 'gluon.html.LI'>"
+p349
+sS'TH'
+p350
+S"<class 'gluon.html.TH'>"
+p351
+sS'TD'
+p352
+S"<class 'gluon.html.TD'>"
+p353
+sS'PluginManager'
+p354
+S"<class 'gluon.tools.PluginManager'>"
+p355
+sS'IS_URL'
+p356
+S"<class 'gluon.validators.IS_URL'>"
+p357
+sS'A'
+S"<class 'gluon.html.A'>"
+p358
+sS'HEAD'
+p359
+S"<class 'gluon.html.HEAD'>"
+p360
+sS'IS_DATETIME_IN_RANGE'
+p361
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p362
+sS'FORM'
+p363
+S"<class 'gluon.html.FORM'>"
+p364
+sS'I'
+S"<class 'gluon.html.I'>"
+p365
+sS'IS_NOT_IN_DB'
+p366
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p367
+sg108
+S"<Storage {'body': <cStringIO.StringO object at 0... at 0x110b72d70>, 'view': 'default/camper.html'}>"
+p368
+sS'THEAD'
+p369
+S"<class 'gluon.html.THEAD'>"
+p370
+sS'ANY_OF'
+p371
+S"<class 'gluon.validators.ANY_OF'>"
+p372
+sS'IS_NULL_OR'
+p373
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p374
+sS'IS_FLOAT_IN_RANGE'
+p375
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p376
+sg56
+S"<Storage {'_vars': None, 'function': 'camper', '...der': '/Users/habibi/web2py/applications/camp/'}>"
+p377
+sS'IS_EXPR'
+p378
+S"<class 'gluon.validators.IS_EXPR'>"
+p379
+sS'T'
+S'<gluon.languages.translator object>'
+p380
+sS'IS_IN_SET'
+p381
+S"<class 'gluon.validators.IS_IN_SET'>"
+p382
+sS'IS_UPLOAD_FILENAME'
+p383
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p384
+sS'log_file'
+p385
+S'<function log_file>'
+p386
+sS'TT'
+p387
+S"<class 'gluon.html.TT'>"
+p388
+sS'IS_DECIMAL_IN_RANGE'
+p389
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p390
+sssS'traceback'
+p391
+S'Traceback (most recent call last):\n  File "/Users/habibi/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/Users/habibi/web2py/applications/camp/views/default/camper.html", line 3, in <module>\n    <div class="container">\nNameError: name \'form\' is not defined\n'
+p392
+s.
