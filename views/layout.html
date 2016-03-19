@@ -169,9 +169,16 @@
         </div>
         <div class="span6">
           <nav id="nav-secondary" role="navigation">
-          <div class="menu-secondary-navigation-container"><ul id="menu-secondary-navigation" class="nav nav-pills pull-right"><li class="menu-register"><a href="">Register<small></small></a></li>
-<li class="menu-donate"><a href="">Donate<small></small></a></li>
-<li class="menu-wish-list"><a href="">Wish List<small></small></a></li>
+          <div class="menu-secondary-navigation-container"><ul id="menu-secondary-navigation" class="nav nav-pills pull-right">
+            <li class="menu-register">
+             {{=A('Register', callback=URL('registration'))}}
+          </li>
+<li class="menu-donate">
+  {{=A('Donate', callback=URL('donate'))}}
+</li>
+<li class="menu-wish-list">
+    {{=A('Wish List', callback=URL('wishlist'))}}
+</li>
 </ul></div>          </nav>
         </div>
       </div>
@@ -199,42 +206,25 @@
 </li>
 <li class="menu-retreats dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">volunteer</div><small></small></a>
 <ul class="dropdown-menu">
-	<li class="menu-counselors"><a href="">Counselors<small></small></a></li>
-	<li class="menu-facilities"><a href="">Staff<small></small></a></li>
-	<li class="menu-recreation"><a href="">Nurses<small></small></a></li>
-	<li class="menu-silver-beach"><a href="">Other<small></small></a></li>
+	<li class="menu-counselors">
+    {{=A('Counselors - ages 13-21', callback=URL('counselor'))}}
+  </li>
+	<li class="menu-facilities">
+      {{=A('Staff - ages 21+', callback=URL('staff'))}}
+  </li>
+	<li class="menu-recreation">
+      {{=A('Nurses', callback=URL('nurses'))}}
+  </li>
 </ul>
 </li>
-<li class="menu-rentals dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">Camp Life</div><small></small></a>
-<ul class="dropdown-menu">
-	<li class="menu-counselors"><a href="">Counselors - ages 13-21<small></small></a></li>
-	<li class="menu-facilities"><a href="">Staff - ages 21+<small></small></a></li>
-	<li class="menu-recreation"><a href="">Nurses<small></small></a></li>
-	<li class="menu-silver-beach"><a href="">Other<small></small></a></li>
-</ul>
+<li class="menu-news" data-dropdown="dropdown">
+      {{=A('Activities', callback=URL('activities'))}}
 </li>
-<li class="menu-news"><a href="">Q&amp;A<small></small></a></li>
-<li class="menu-about dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">About</div><small></small></a>
-<ul class="dropdown-menu">
-	<li class="menu-information dropdown" data-dropdown="dropdown"><a href="#"><div class="title">Information</div><small></small></a>
-<ul class="dropdown-menu">
-		<li class="menu-mission"><a href="">Mission<small></small></a></li>
-		<li class="menu-directions"><a href="">Directions<small></small></a></li>
-		<li class="menu-staff"><a href="">Financial Aid<small></small></a></li>
-		<li class="menu-board"><a href="">Staff<small></small></a></li>
-    	<li class="menu-contact"><a href="">Board<small></small></a></li>
-		<li class="menu-contact"><a href="">Contact<small></small></a></li>
-	</ul>
+<li class="menu-news">
+      {{=A('Q&A', callback=URL('questions'))}}
 </li>
-	<li class="menu-giving dropdown" data-dropdown="dropdown"><a href=""><div class="title">Giving</div><small></small></a>
-<ul class="dropdown-menu">
-		<li class="menu-memorial-giving"><a href="">Memorial Giving<small></small></a></li>
-		<li class="menu-friends-of-covenant-pines"><a href="">Friends of Special Camps<small></small></a></li>
-		<li class="menu-electronic-funds-transfer"><a href="">Electronic Funds Transfer<small></small></a></li>
-		<li class="menu-product-service-donation"><a href="">Product &#038; Service Donation<small></small></a></li>
-		<li class="menu-estate-gifts"><a href="">Estate Gifts<small></small></a></li>
-		<li class="menu-wish-list"><a href="">Wish List<small></small></a></li>
-	</ul>
+<li class="menu-about dropdown" data-dropdown="dropdown">
+      {{=A('About', callback=URL('about'))}}
 </li>
 </ul>
 </li>
@@ -272,8 +262,20 @@
     <div id="content-info-wrapper">
     <footer id="content-info" class="container" role="contentinfo">
             <section id="diamond-bloglist" class="widget-1 widget-first widget DiamondBL_widget_endView"><div class="widget-1 widget-first widget-inner"><h3>Join Us</h3>
-                 <ul><li>
-                <a href="http://specialcamps.org/">Camper Application</a></li><li><a href="">Counselor Application</a></li><li><a href="">Staff Application</a></li><li><a href="">Camp Nurse Application</a></li></ul>
+                 <ul>
+                  <li>
+                {{=A('Camper Application', callback=URL('camper'))}}
+              </li>
+              <li>
+              {{=A('Counselor Application', callback=URL('counselor'))}}
+              </li><li>
+              <li>
+              {{=A('Staff Application', callback=URL('staff'))}}
+              </li>
+              <li>
+              {{=A('Nurse Application', callback=URL('nurses'))}}
+              </li>            
+            </ul>
                 </div></section>
         <section id="image-gallery-widget" class="widget-2 widget widget_search"><div class="widget-2 widget-inner"><h3>Recent Images</h3><ul class="wGallery"><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-59-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-58-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-57-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-56-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-55-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-54-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-53-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-52-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-51-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-50-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-49-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-48-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li></ul></div></section>
         <section id="quick-links-widget" class="widget-3 widget widget_nav_menu">
