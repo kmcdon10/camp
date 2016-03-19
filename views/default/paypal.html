@@ -1,37 +1,39 @@
 {{extend 'layout.html'}}
-<script>
-	$(function() {
-		$('#paypal_form').sumbit();
-	})
-</script>
 
-<h1>Please wait one moment while we redirect you to paypal.</h1>
-<form id='paypal_form' action='https://www.sandbox.paypal.com/cgi-bin/webscs' method='post'>
+<div class="container">
+  <div class="row">
+    <div id="web2py_user_form" class="col-lg-6">
+    	<p class="lead">Paypal</p>
+			<script>
+				$(function() {
+					$('#paypal_form').sumbit();
+				})
+			</script>
 
-<input type='hidden' name='business' value='{{=paypal_id}}' />
-<input type="image" name="submit" border="0"
-  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-  alt="PayPal - The safer, easier way to pay online">
-  <img alt="" border="0" width="1" height="1"
-  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+			<h1>Please wait one moment while we redirect you to paypal.</h1>
+			<form id='paypal_form' action='https://www.sandbox.paypal.com/cgi-bin/webscs' method='post'>
 
+			<input type='hidden' name='business' value='{{=paypal_id}}' />
+			<input type="image" name="submit" border="0"
+			  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+			  alt="PayPal - The safer, easier way to pay online">
+			  <img alt="" border="0" width="1" height="1"
+			  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 
-<input type='hidden' name='cmd' value='_xclick' />
-<!-- <input type='hidden' name='upload' value='1' /> -->
-<!-- <input type='hidden' name='charset' value='utf-8' /> -->
-<!-- <input type='hidden' name='display' value='1' /> -->
+			<input type='hidden' name='cmd' value='_xclick' />
 
+			<input type='hidden' name='notify_url' value='{{=ipn_handler}}' />
+			<input type='hidden' name='return' value='{{=paypal_return_url}}' />
 
-<input type='hidden' name='notify_url' value='{{=ipn_handler}}' />
-<input type='hidden' name='return' value='{{=paypal_return_url}}' />
+			<input type='hidden' name='custom' value='{{=auth.user_id}}' />
 
-<input type='hidden' name='custom' value='{{=auth.user_id}}' />
-<!-- <input type='hidden' name='invoice' value='{{=session.pending.id}}' /> -->
-<input type='hidden' name='amount' value='{{=session.pending.amount}}' />
-<input type='hidden' name='item_name' value='Puppies for sale' />
-<input type='hidden' name='item_number' value='{{=session.pending.id}}' />
-<input type="hidden" name="currency_code" value="USD">
+			<input type='hidden' name='amount' value='{{=session.pending.amount}}' />
+			<input type='hidden' name='item_name' value='Puppies for sale' />
+			<input type='hidden' name='item_number' value='{{=session.pending.id}}' />
+			<input type="hidden" name="currency_code" value="USD">
 
-</form>
-
-{{=response.toolbar()}}
+			</form>
+			{{=response.toolbar()}}
+		</div>
+	</div>
+</div>

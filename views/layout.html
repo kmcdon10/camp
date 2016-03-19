@@ -8,28 +8,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1024">
-  <script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/vendor/modernizr-2.5.3.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="http://covenantpines.org/wp-content/themes/covenant-pines/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
-  <link rel="stylesheet" href="http://covenantpines.org/wp-content/plugins/jquery-colorbox/themes/theme1/colorbox.css?ver=4.6.1">
-  <link rel="stylesheet" href="http://covenantpines.org/wp-content/themes/covenant-pines/css/bootstrap.css">
-  <link rel="stylesheet" href="http://covenantpines.org/wp-content/themes/covenant-pines/css/app.css">
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/plugins/wordpress-countdown-widget/js/jquery.countdown.min.js?ver=1.0'></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link href="{{=URL('static', 'css/bootstrap.css')}}" rel="stylesheet" type="text/css"/>
+  <link href="{{=URL('static', 'css/app.css')}}" rel="stylesheet" type="text/css"/>
   <script type='text/javascript'>
   /* <![CDATA[ */
   var jQueryColorboxSettingsArray = {"jQueryColorboxVersion":"4.6.1","colorboxInline":"false","colorboxIframe":"false","colorboxGroupId":"","colorboxTitle":"","colorboxWidth":"false","colorboxHeight":"false","colorboxMaxWidth":"false","colorboxMaxHeight":"false","colorboxSlideshow":"false","colorboxSlideshowAuto":"false","colorboxScalePhotos":"true","colorboxPreloading":"false","colorboxOverlayClose":"true","colorboxLoop":"true","colorboxEscKey":"true","colorboxArrowKey":"true","colorboxScrolling":"true","colorboxOpacity":"0.85","colorboxTransition":"elastic","colorboxSpeed":"350","colorboxSlideshowSpeed":"2500","colorboxClose":"close","colorboxNext":"next","colorboxPrevious":"previous","colorboxSlideshowStart":"start slideshow","colorboxSlideshowStop":"stop slideshow","colorboxCurrent":"{current} of {total} images","colorboxXhrError":"This content failed to load.","colorboxImgError":"This image failed to load.","colorboxImageMaxWidth":"90%","colorboxImageMaxHeight":"90%","colorboxImageHeight":"false","colorboxImageWidth":"false","colorboxLinkHeight":"false","colorboxLinkWidth":"false","colorboxInitialHeight":"100","colorboxInitialWidth":"300","autoColorboxJavaScript":"","autoHideFlash":"","autoColorbox":"true","autoColorboxGalleries":"","addZoomOverlay":"","useGoogleJQuery":"","colorboxAddClassToLinks":""};
   /* ]]> */
   </script>
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/plugins/jquery-colorbox/js/jquery.colorbox-min.js?ver=1.4.33'></script>
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/plugins/jquery-colorbox/js/jquery-colorbox-wrapper-min.js?ver=4.6.1'></script>
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/plugins/pixelyoursite/js/public.js?ver=1.0'></script>
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/themes/covenant-pines/js/plugins.js'></script>
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/themes/covenant-pines/js/main.js?v=1'></script>
-  <link rel='https://api.w.org/' href='http://covenantpines.org/wp-json/' />
-  <link rel="alternate" type="application/json+oembed" href="http://covenantpines.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcovenantpines.org%2Fsummer-camps%2F" />
-  <link rel="alternate" type="text/xml+oembed" href="http://covenantpines.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcovenantpines.org%2Fsummer-camps%2F&#038;format=xml" />
-  <!-- All in one Favicon 4.3 --><link rel="icon" href="" type="image/png"/>    
-	<link rel="alternate" type="application/rss+xml" title="Special Camps Summer Camp Feed" href="">
   <style type="text/css">
     h1, h2, h3, h4, h5, h6,
     a,
@@ -162,147 +150,145 @@
     <div id="header">
     <div class="container">
       <div class="row">
-        <div class="span6">
-          <a class="brand" href="http://specialcamps.org/">
-              <img src="/camp/static/logo" alt="Special Camps Summer Camp" />
-          </a>
+        <div class="span6" style='align:center'>
+          <h1>Special Camps</h1>
+          <img style='vertical-align: baseline;' src="/camp/static/logo" alt="Special Camps Summer Camp"/>
         </div>
-        <div class="span6">
           <nav id="nav-secondary" role="navigation">
-          <div class="menu-secondary-navigation-container"><ul id="menu-secondary-navigation" class="nav nav-pills pull-right">
-            <li class="menu-register">
-             {{=A('Register', callback=URL('registration'))}}
-          </li>
-<li class="menu-donate">
-  {{=A('Donate', callback=URL('donate'))}}
-</li>
-<li class="menu-wish-list">
-    {{=A('Wish List', callback=URL('wishlist'))}}
-</li>
-</ul></div>          </nav>
-        </div>
+              <ul id="menu-secondary-navigation" class="nav nav-pills pull-right">
+                <li class="menu-register">
+                 {{=A('Register', callback=URL('registration'))}}
+                </li>
+                <li class="menu-donate">
+                  {{=A('Donate', callback=URL('donate'))}}
+                </li>
+                <li class="menu-wish-list">
+                    {{=A('Wish List', callback=URL('wishlist'))}}
+                </li>
+              </ul>
+          <!-- </nav> -->
       </div>
     </div>
-          <header id="banner" class="navbar" role="banner">
-                <div class="navbar-inner">
-          <div class="container">
-                        <nav id="nav-main" role="navigation" class="nav-main-blog-5">
-              <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="nav"><li class="menu-home"><a href="">Home<small></small></a></li>
-<li class="menu-summer-camps current-menu-item dropdown active" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">Summer Camps</div><small></small></a>
-<ul class="dropdown-menu">
-	<li class="menu-youth-camps dropdown" data-dropdown="dropdown"><a href=""><div class="title">Summer Camps</div><small></small></a>
-<ul class="dropdown-menu">
-		<li class="menu-kids-kamp"><a title="Entering grades 2-3" href="">Youth <small>ages 6 - 21</small></a></li>
-    		<li class="menu-kids-kamp"><a title="Entering grades 2-3" href="">Adults <small>ages 21+</small></a></li>
-	</ul>
-</li>
-	<li class="menu-links dropdown" data-dropdown="dropdown"><a href="#"><div class="title">Links</div><small></small></a>
-<ul class="dropdown-menu">
-		<li class="menu-register"><a href="">Register<small></small></a></li>
-		<li class="menu-media-gallery"><a href="">Media Gallery<small></small></a></li>
-	</ul>
-</li>
-</ul>
-</li>
-<li class="menu-retreats dropdown" data-dropdown="dropdown"><a href="" class="dropdown-toggle" ><div class="title">volunteer</div><small></small></a>
-<ul class="dropdown-menu">
-	<li class="menu-counselors">
-    {{=A('Counselors - ages 13-21', callback=URL('counselor'))}}
-  </li>
-	<li class="menu-facilities">
-      {{=A('Staff - ages 21+', callback=URL('staff'))}}
-  </li>
-	<li class="menu-recreation">
-      {{=A('Nurses', callback=URL('nurses'))}}
-  </li>
-</ul>
-</li>
-<li class="menu-news" data-dropdown="dropdown">
-      {{=A('Activities', callback=URL('activities'))}}
-</li>
-<li class="menu-news">
-      {{=A('Q&A', callback=URL('questions'))}}
-</li>
-<li class="menu-about dropdown" data-dropdown="dropdown">
-      {{=A('About', callback=URL('about'))}}
-</li>
-</ul>
-</li>
-</ul></div>            </nav>
-          </div>
+    <header id="banner" class="navbar" role="banner">
+      <div class="navbar-inner">
+        <div class="container">
+          <nav id="nav-main" role="navigation" class="nav-main-blog-5">
+            <div class="menu-primary-navigation-container">
+              <ul id="menu-primary-navigation" class="nav">
+                <li class="dropdown-toggle" data-dropdown="dropdown">
+                  {{=A('About', callback=URL('about'))}}
+                </li>
+                <li class="dropdown-toggle">
+                  {{=A('Q&A', callback=URL('questions'))}}
+                </li>
+                <li class="dropdown-toggle" data-dropdown="dropdown">
+                  {{=A('Activities', callback=URL('activities'))}}
+                </li>
+                <li class="dropdown-toggle" data-dropdown="dropdown">
+                {{=A('Campers', callback=URL('camper'))}}
+                </li>
+                <li class="dropdown-toggle" data-dropdown="dropdown">
+                  {{=A('Counselors', callback=URL('counselor'))}}
+                </li>
+                <li class="dropdown-toggle" data-dropdown="dropdown">
+                  {{=A('Staff', callback=URL('staff'))}}
+                </li>
+                <li class="dropdown-toggle" data-dropdown="dropdown">
+                  {{=A('Nurses', callback=URL('nurses'))}}
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
-      </header><!-- end #banner -->
-      </div><!-- end .header -->
+      </nav>
+    </div>
+  </div>
+</header><!-- end #banner -->
+</div><!-- end .header -->
 
-    <div id="wrap" class="container" role="document">
-      <div id="content" class="row">
-<div id="main" class="span9" role="main">
+<div id="wrap" class="container" role="document">
+  <div id="content" class="row">
+    <div id="main" class="span9" role="main">
         {{include}}
+    </div>
+    <aside id="sidebar" class="span3" role="complementary">
+    <div>
+    <section id="follow-us-widget" class="widget-3 widget widget_text">
+      <div class="widget-3 widget-inner">
+        <h3>Follow Us</h3>
+        <div class="textwidget">
+          <a href="https://www.facebook.com/Special-Camps-151206268237679/" id="facebook-link" class="social-link" target="_blank">Facebook</a>
+          <a href="https://twitter.com/" id="twitter-link" class="social-link">Twitter</a>
+          <a href="http://instagram.com/" id="instagram-link" class="social-link">Instagram</a>
+          <a href="https://vimeo.com/" id="vimeo-link" class="social-link" target="_blank">Vimeo</a>
+        </div>
+  		</div>
+    </section>
+    <section id="related_content_widget-2" class="widget-5 widget-last widget widget_related_content_widget">
+      <div class="widget-5 widget-last widget-inner">
+        <h3>Resources & Forms</h3>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/0B4HmFDqYB8fycnloZjB6R0JqZHM/view?usp=sharing">General Information</a></li>
+          <li><a href="https://drive.google.com/file/d/0B4HmFDqYB8fyTVZZSVFsbnFiSWM/view?usp=sharing">Camper Application</a></li>
+          <li><a href="https://drive.google.com/file/d/0B4HmFDqYB8fyXy1OSk5KdmhBLTg/view?usp=sharing">Counselor Application</a></li>
+          <li><a href="https://drive.google.com/file/d/0B4HmFDqYB8fyNDl5WmVNMkx4bDg/view?usp=sharing">Staff Application</a></li>
+        </ul>
       </div>
-<aside id="sidebar" class="span3" role="complementary">
-<div>
-<section id="follow-us-widget" class="widget-3 widget widget_text"><div class="widget-3 widget-inner"><h3>Follow Us</h3>			<div class="textwidget"><a href="https://www.facebook.com/Special-Camps-151206268237679/" id="facebook-link" class="social-link" target="_blank">Facebook</a>
-<a href="https://twitter.com/" id="twitter-link" class="social-link">Twitter</a>
-<a href="http://instagram.com/" id="instagram-link" class="social-link">Instagram</a>
-<a href="https://vimeo.com/" id="vimeo-link" class="social-link" target="_blank">Vimeo</a></div>
-		</div></section><section id="search-widget" class="widget-4 widget widget_search"><div class="widget-4 widget-inner"><h3>Find what you need</h3><form role="search" method="get" id="searchform" class="form-search" action="/">
-  <label class="visuallyhidden" for="s">Search for:</label>
-  <input type="text" value="" name="s" id="s" class="search-query" placeholder="Search">
-  <input type="submit" id="searchsubmit" value="Search" class="btn">
-</form></div></section><section id="related_content_widget-2" class="widget-5 widget-last widget widget_related_content_widget"><div class="widget-5 widget-last widget-inner"><h3>Resources</h3><ul>
-<li><a href="">Summer Brochure</a></li>
-<li><a href="">Financial Aid Application</a></li>
-</ul>
-</div></section></div>
-</aside><!-- /#sidebar -->
-        </div><!-- /#content -->
-  
-  </div><!-- /#wrap -->
+    </section>
+    </div>
+    </aside><!-- /#sidebar -->
+  </div><!-- /#content --> 
+</div><!-- /#wrap -->
 
-    <div id="content-info-wrapper">
-    <footer id="content-info" class="container" role="contentinfo">
-            <section id="diamond-bloglist" class="widget-1 widget-first widget DiamondBL_widget_endView"><div class="widget-1 widget-first widget-inner"><h3>Join Us</h3>
-                 <ul>
-                  <li>
-                {{=A('Camper Application', callback=URL('camper'))}}
-              </li>
-              <li>
-              {{=A('Counselor Application', callback=URL('counselor'))}}
-              </li><li>
-              <li>
-              {{=A('Staff Application', callback=URL('staff'))}}
-              </li>
-              <li>
-              {{=A('Nurse Application', callback=URL('nurses'))}}
-              </li>            
-            </ul>
-                </div></section>
-        <section id="image-gallery-widget" class="widget-2 widget widget_search"><div class="widget-2 widget-inner"><h3>Recent Images</h3><ul class="wGallery"><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-59-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-58-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-57-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-56-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-55-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-54-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-53-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-52-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-51-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-50-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-49-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li><li class="wGallery"><a href="http://covenantpines.org/2016-trailblazer-retreat-pictures/"><img src="http://covenantpines.org/assets/2016-tb-retreat_edited-48-150x150.jpg" alt="2016 Trailblazer Retreat Pictures" title="2016 Trailblazer Retreat Pictures" width="150" height="150" /></a></li></ul></div></section>
-        <section id="quick-links-widget" class="widget-3 widget widget_nav_menu">
-            <div class="widget-3 widget-inner">
-                <h3>Quick Links</h3><div class="menu-footer-quick-links-container"><ul id="menu-footer-quick-links" class="menu">
-<li id="menu-item-489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-489"><a href="">About Us</a></li>
-<li id="menu-item-612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-612"><a href="">Media Gallery</a></li>
-<li id="menu-item-492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492"><a href="">Donate</a></li>
-<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"><a href="">Home</a></li>
-</ul></div></div></section>
-        <section id="contact-info-widget" class="widget-4 widget widget_text"><div class="widget-4 widget-inner"><h3>Special Camps Camp</h3>			<div class="textwidget">
-<p>26W 684 Lindsey Ave.<br/>
-Winfield, IL 60190<br/>
-630.690.0944<br/>
-mcdcolleen@yahoo.com</p>
-<p>&copy; 2016 Special Camps Summer Camp,<br/>All Rights Reserved</p>
-</div>
-		</div></section>
-        </footer>
-  </div><!-- end #content-info-wrapper -->
-  <script type='text/javascript' src='http://covenantpines.org/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _wpcf7 = {"loaderUrl":"http:\/\/covenantpines.org\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://covenantpines.org/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.4'></script>
-<script type='text/javascript' src='http://covenantpines.org/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+<div id="content-info-wrapper">
+  <footer id="content-info" class="container" role="contentinfo">
+    <section id="diamond-bloglist" class="widget-1 widget-first widget DiamondBL_widget_endView">
+      <div class="widget-1 widget-first widget-inner">
+        <h3>Join Us</h3>
+          <ul>
+            <li>{{=A('Camper Application', callback=URL('camper'))}}</li>
+            <li>{{=A('Counselor Application', callback=URL('counselor'))}}</li>
+            <li>{{=A('Staff Application', callback=URL('staff'))}}</li>
+            <li>{{=A('Nurse Application', callback=URL('nurses'))}}</li>            
+          </ul>
+      </div>
+    </section>
+    <section id="quick-links-widget" class="widget-3 widget widget_nav_menu">
+      <div class="widget-3 widget-inner">
+        <h3>Quick Links</h3>
+        <div class="menu-footer-quick-links-container">
+          <ul id="menu-footer-quick-links" class="menu">
+            <li id="menu-item-489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-489">
+              {{=A('About Us', callback=URL('about'))}}
+            </li>
+            <li id="menu-item-612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-612">
+              {{=A('Q&A', callback=URL('questions'))}}
+            </li>
+            <li id="menu-item-492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-492">
+              {{=A('Donate', callback=URL('donate'))}}
+            </li>
+            <li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70">
+              {{=A('Home', callback=URL('index'))}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="contact-info-widget" class="widget-4 widget widget_text">
+      <div class="widget-4 widget-inner">
+        <h3>Special Camps Camp</h3>
+        <div class="textwidget">
+          <p>
+            26W 684 Lindsey Ave.<br/>
+            Winfield, IL 60190<br/>
+            630.690.0944<br/>
+            mcdcolleen@yahoo.com
+          </p>
+          <p>&copy; 2016 Special Camps Summer Camp,<br/>All Rights Reserved</p>
+        </div>
+  		</div>
+    </section>
+  </footer>
+</div><!-- end #content-info-wrapper -->
 </body>
 </html>
