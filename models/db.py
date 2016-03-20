@@ -10,6 +10,12 @@ auth = Auth(db)
 #     domain='localhost:8000/camp/default/index',
 #     url="http://localhost:8000/camp/%s/default/user/login" % request.application)
 
+
+
+
+
+
+
 db.define_table("image",
     Field("title", unique=True),
     Field("file", "upload"),
