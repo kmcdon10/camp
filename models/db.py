@@ -3,12 +3,12 @@ db = DAL('sqlite://storage.sqlite')
 from gluon.tools import *
 auth = Auth(db)
 
-#from gluon.contrib.login_methods.rpx_account import RPXAccount
-#auth.settings.actions_disabled=['register','change_password','request_reset_password']
-#auth.settings.login_form = RPXAccount(request,
+# from gluon.contrib.login_methods.rpx_account import RPXAccount
+# auth.settings.actions_disabled=['register','change_password', 'request_reset_password']
+# auth.settings.login_form = RPXAccount(request,
 #     api_key='569ddf3abd8a0704347caa9e8bb7370a14905b04 ',
-#     domain='localhost:8000/blogging_platform3/default/index',
-#     url = "http://localhost:8000/blogging_platform3/%s/default/user/login" % request.application)
+#     domain='localhost:8000/camp/default/index',
+#     url="http://localhost:8000/camp/%s/default/user/login" % request.application)
 
 db.define_table("image",
     Field("title", unique=True),
@@ -330,8 +330,7 @@ db.camp_parent_questionnaire.camper_id.requires = IS_IN_DB(db, db.camper)
 
 db.define_table('pending',
     Field('auth_user_id', 'reference auth_user', default=auth.user_id, update=auth.user_id, readable=False, writable=False),
-    Field('token_class', requires=IS_IN_SET(['a', 'b', 'c'])),
-    Field('amount', 'double'),
+    Field('payment_type', requires=IS_IN_SET(['$150 Camper Deposit - Pay half now', '$300 Pay in full'])),
     Field('confirmed', 'boolean', default=False, readable=False, writable=False))
 
 db.pending.auth_user_id.requires = IS_IN_DB(db, db.auth_user)

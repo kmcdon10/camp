@@ -1,11 +1,6 @@
 def index():
     login = A("login", _href=URL("user/login"))
-    users = db(db.auth_user).select()
-    images = db(db.image).select()
-    pages = db(db.page).select()
-    form = FORM(INPUT(_id='keyword',_name='keyword',_onkeyup="ajax('callback', ['keyword'], 'target');"))
-    target_div = DIV(_id='target')
-    return dict(pages=pages, users=users, images=images, login=login, form=form, target_div=target_div)
+    return dict(login=login)
 
 def user():
     """
@@ -37,7 +32,7 @@ def activities():
 def nurses():
     return dict()
 
-def buySomethingElse():
+def checkout():
     form = SQLFORM(db.pending, formstyle='divs', submit_button='Buy')
     if form.process().accepted:
         response.flash = 'form accepted'
@@ -189,7 +184,7 @@ def camp_parent_questionnaire():
     form = SQLFORM(db.camp_parent_questionnaire)
     if form.process().accepted:
         response.flash = 'form accepted'
-        redirect(URL('default', 'buySomethingElse'))
+        redirect(URL('default', 'pay'))
     elif form.errors:
         response.flash = 'form has errors'
     else:
